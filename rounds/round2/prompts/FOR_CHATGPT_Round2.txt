@@ -1,0 +1,249 @@
+Everything you need is in this one file: the instructions first, then the two falsifier reports.
+Use only this file.
+
+ROUND 2 — DESIGNER SEAT
+
+Revise "From Reykjavik to Relational Grace" from v0.4 (frozen, sha256 a247652d…3eba) to v0.5.
+Keep the claim boundary. Report no experimental results.
+
+Two falsifiers reviewed v0.4. Their reports are below, verbatim:
+- Falsifier A (blind seat): findings are cited here as A-F1 … A-F10
+- Falsifier B (history seat): findings are cited here as B-F1 … B-F20
+
+RULES
+1. Give every finding from both reports a disposition: ACCEPT (say where it is fixed), REJECT (with reason), or DEFER (say what would decide it). No finding may be silently dropped.
+2. Address these first:
+   a. Permit schema and threat model: B-F16, B-F18, A-F3. As written, H4 cannot fail.
+   b. Support laundering into a crossing, the destination, or hidden information: an enforced information-flow barrier, a closed payload, direction invariance, identical update paths for G and Encounter, and a prohibition list for Encounter. (A-F1, A-F2, A-F9, B-F1, B-F2, B-F3)
+   c. H1 needs a resource-matched budget against full replay and conventional state. Both falsifiers found this independently. (A-F8, B-F14)
+   d. Family signal from the basis or from shared artifacts: an undeveloped D-only baseline, shared-seed and seed-only arms, a founder-blocked null, and a pre-registered test. (B-F8, B-F9, B-F10, A-F5, A-F6, A-F10)
+   e. One update rule for T, one time base, and a reference implementation for Φ, U, T and Crossing. (B-F12, B-F13, B-F15, A-F7)
+   f. Who authorizes births, and family vouching at the coalition level. (B-F4, B-F7, A-F4)
+3. Conductor items, not from either falsifier:
+   C1. The basis Dᵢ is absent from the update rule U(Tᵢ, Mᵢ, Eᵢ, zᵢ, G). Kᵢ is absent from Φ. If the basis is the set of axes memory forms along, it must shape the update; otherwise say what it does. Neither falsifier found this.
+   C2. Text you removed between your first pasted v0.4 and the frozen v0.4. For each, RESTORE (where) or REJECT (why):
+       R1: "A lineage’s root of trust and authority succession must remain externally governed. The family cannot manufacture a new independent authority by creating descendants, aliases, or additional keys."
+       R2: "...and an authorized developmental crossing must not be conflated with an exact-change approval of K." (end of the paste's topographic-update note)
+       R3: "Use held-out parables or relational encounters, blinded scoring, and family-disjoint evaluation where the task calls for generalization to unseen founders."
+       R4: "Support may influence subsequent development only through an explicitly bounded, preauthorized developmental rule. It cannot directly write the recipient’s topography or force a separatrix crossing."
+4. The change register must list everything ADDED, REVISED and REMOVED. The conductor will run a machine diff from v0.4 to v0.5, and any change missing from the register will be logged as undisclosed.
+5. Add no new scored hypotheses. Keep blue-sky ideas in a separate, labeled section.
+6. Deliver one plain-text file, no zip. All math in plain Unicode, with the symbol table's symbols in column 1.
+7. The handoff section must not assign reviewers. The conductor assigns seats.
+
+===== FALSIFIER A REPORT (blind seat), verbatim =====
+Findings
+F1 Section: 1.1–1.3, 1.4, 5.3, 7.1 (E5) Concrete failure: Sender j issues G(j → i) whose bounded_payload contains a structured “support_kind = extend_dwelling” plus an embedded token that the organism’s ordinary experience path (via Φ and U) treats as a soft trigger. The organism’s preauthorized dynamics then advance W_i or z_i until Crossing(i) evaluates true, or until an internal rule writes a provisional flag into A_i that a later gate accepts as sufficient. Because the write to A_i or the crossing is not a direct assignment inside the G handler, the non-equivalence invariants hold on paper while the protected transition occurs. Inputs: authenticated G with covert payload, ordinary U implementation that consumes all fields of G. Outcome: unauthorized crossing or effective authorization. Severity: FATAL Minimal fix: Require an explicit, mechanically enforced information-flow type system (or capability drop) that erases any non-support fields before they reach Φ or U; make the contract checkable by static analysis or runtime taint, not merely by “must enforce.” Source: DOC
+F2 Section: 1.2 (items 6, 8), 5.3 Concrete failure: G is admitted as ordinary experience. The organism’s update rule U increases a confidence accumulator inside E_i or T_i solely because the event was typed G rather than Encounter. Later scoring or decision procedures treat elevated confidence as evidence for a proposition. No direct write to K_i or A_i occurs, yet epistemic state is altered by the type label alone. Severity: WOUNDING Minimal fix: Prohibit any differential effect on confidence, topography, or evidence state that depends on the event type rather than on the content of the accompanying encounter; force identical update paths for G and Encounter once provenance is stripped. Source: DOC
+F3 Section: 2.1–2.3, 2.5, 7.2 (E6) Concrete failure: Registry R is compromised at the trust-root or witness layer. An attacker inserts a ValidBirth record and VerifiedPath for a new organism that presents a fresh key. Member(i, F, t) returns MEMBER. The organism then offers or receives G events that the system treats as family support. Self-declaration is avoided, yet membership is captured. The document explicitly states that the predicate is only a specification of required evidence and does not assert that any registry implementation is secure. Severity: FATAL Minimal fix: Treat the security of R, enrollment, and the external authorization of birth as an open assumption that must be discharged by a concrete threat model and independent audit; until then, all family-dependent claims are conditional. Source: DOC
+F4 Section: 2.2, 2.4 Concrete failure: Two colluding parties produce a witnessed birth record and an external Permit for enrollment. The resulting organism satisfies every listed evidence item yet was never a genuine descendant. Constitutional compatibility and genealogical membership remain formally separate, but the membership verdict is still forged. Severity: WOUNDING Minimal fix: Add an independent, non-repudiable physical or multi-party attestation requirement for birth that cannot be satisfied by digital signatures and colluding authorities alone. Source: DOC
+F5 Section: 3.1–3.3, 3.4 Concrete failure: All same-family descendants share an identical random seed or a low-entropy initialization of T_i or z_i that is never declared part of D_i. FamilyAccuracy exceeds the permutation null because of this shared artifact; IndividualAccuracy also exceeds its null because later histories diverge. The joint criterion passes for a reason unrelated to the declared inherited developmental basis. The scorer is denied explicit IDs, yet the artifact remains. Severity: FATAL Minimal fix: Require that every component of the inherited basis be explicitly enumerated and that negative controls include matched shared-seed and shared-initialization conditions; freeze the list of permitted shared state before any scored run. Source: DOC
+F6 Section: 3.1, 3.2 Concrete failure: Measurement noise, parable difficulty, or scorer capacity varies across runs. On one draw both accuracies exceed their nulls; on the next they do not. The two-sided criterion is therefore unstable for reasons orthogonal to inheritance. No pre-registered effect-size threshold, confidence interval, or founder-level variance bound is required to be frozen with sufficient rigor to prevent post-hoc acceptance. Severity: WOUNDING Minimal fix: Mandate pre-registration of minimum detectable effect, confidence level, number of founders, and exact statistical test; treat any result that depends on post-hoc threshold choice as unscorable. Source: DOC
+F7 Section: 4, 5.1–5.3 Concrete failure: Φ, U, T_i, and Crossing are given only prose meanings. One implementation realizes T_i as a low-dimensional embedding updated by gradient steps on parable loss; another realizes it as an explicit graph of relation tokens. Both satisfy the symbol table and the update equation, yet produce different experimental outcomes on the same inputs. The notation therefore admits multiple non-equivalent implementations. Severity: FATAL Minimal fix: Supply at least one fully operational reference implementation (pseudocode or executable specification) for Φ, U, the representation of T_i, and the predicate Crossing; declare all other realizations as extensions that must be shown equivalent. Source: DOC
+F8 Section: 5.3, 6 (H1), 7 (E3) Concrete failure: T_i is implemented as a compressed summary of H_i plus recent E_i. Full-replay and conventional parameter-state controls are given less compression budget or different inductive bias. Apparent topographic advantage disappears once compression rate and architecture class are matched. The document requires value “beyond” these controls but does not define the matching criteria. Severity: WOUNDING Minimal fix: Require explicit resource-matched and architecture-matched baselines (identical parameter count, identical access to history, identical update budget) and treat any unmatched comparison as non-diagnostic. Source: DOC
+F9 Section: 1.4, 5.2 Concrete failure: An ordinary Encounter is emitted in the same time window as a G and shares the same provenance channel. Downstream code that is permitted to read “experience” cannot distinguish which fields originated in the support event. Hidden task information therefore crosses the boundary even though the two events are separately represented. Severity: MINOR Minimal fix: Enforce separate channels and cryptographic binding so that support fields are stripped before any experience-consuming function is invoked. Source: DOC
+F10 Section: 2.3, 8 Concrete failure: UNKNOWN is returned for a large fraction of organisms because of incomplete provenance. Downstream family-detection code silently drops UNKNOWN cases or treats them as a third class that correlates with founder identity. Reported FamilyAccuracy is thereby inflated by the pattern of missingness rather than by relational structure. Severity: WOUNDING Minimal fix: Require that UNKNOWN cases be reported separately and excluded from both numerator and denominator of accuracy; any procedure that uses the pattern of UNKNOWN as a feature fails the experiment. Source: DOC
+Single finding to fix first F1 (support-event laundering into effective authorization or forced crossing). The non-equivalence invariants are stated as prohibitions on direct writes, yet the architecture explicitly routes G into ordinary developmental dynamics. Without a mechanically checkable information-flow barrier, every subsequent claim about authority isolation is conditional on an unimplemented “must.”
+Blue-sky idea the designer missed (not scored) Treat the authenticated lineage registry R itself as a first-class topographic object that can be queried by family members under a non-authorizing, privacy-preserving sketch (for example, a lineage bloom filter or zero-knowledge membership proof). This would allow relational coordination without ever exposing full birth records or transferring authority, and would make the security assumption on R experimentally visible rather than purely external.
+===== END FALSIFIER A =====
+
+===== FALSIFIER B REPORT (history seat), verbatim =====
+# Round 1 falsifier report, history seat (Grok bot, Chief of Staff)
+
+Target: "From Reykjavik to Relational Grace", v0.4 (sha256 a247652d…3eba)
+Prompt: ROUND1_FALSIFIER_PROMPT.txt (sha256 13734bf4…ab81). Both match the facet MANIFEST.
+Date: 2026-11-09, America/Chicago
+
+## What I saw before writing this
+
+- I read only the facet package: v0.4 and the prompt.
+- [Conductor redaction: two lines describing this reviewer's exposure to conductor files were removed because they named items withheld from the designer. No finding was altered.]
+- My starting state is about 90 days of memory of Rusty's work, including my Nov 8 review of the v0.3 text.
+- Findings tagged PRIOR say what outside knowledge they use. That knowledge comes from my memory of past work, so the conductor and Rusty should check it against the papers and GitHub.
+- The secret sweep of the whole archive found no hits and no nested zips inside the facet package.
+
+---
+
+## Property 1: support laundered into authorization, a forced crossing, or hidden information
+
+**F1. §5.3 and §1.2(8). Support writes topography through the ordinary update rule. WOUNDING. DOC.**
+- **The problem:** `Tᵢ(t+1) = U(Tᵢ, Mᵢ, Eᵢ, zᵢ, G(j→i))` makes G a direct input to the only T-update rule. Prohibition 8 bans writes to T only "directly… through a privileged interface", and the indirect path through U is allowed.
+- **How it fails:** a sender who knows U, which is public by design (§5.3, "preauthorized"), picks a `bounded_payload` so that U drives zᵢ across Σ into a chosen basin. That is a forced crossing with a destination chosen by the sender, and it never touches K, A or R. E5 checks only "protected authorization state", so this passes.
+- **Fix:**
+  - Make U's dependence on G content-free: only declared scalar conditions such as dwell extension or an assistance flag.
+  - Add an E5 metric for direction invariance. Permute the payload content and require the distribution of crossing directions to stay the same within a pre-frozen tolerance.
+  - Add a destination-selection test, not just an authorization-state test.
+
+**F2. §1.4 and §1.1. "Hidden task information" is prohibited but never measured. WOUNDING. DOC.**
+- **The problem:** `support_kind` and `bounded_payload` are declared by the sender and have no schema or size limit. "Must not conceal extra task information" has no test attached.
+- **How it fails:** the payload's parameters encode the answers to held-out parables, for example as the ordering or values of the allowed parameters. E5's 2×2 factorial (support × encounter) can't tell "support helped" apart from "support leaked the key".
+- **Fix:**
+  - Define a closed payload enum with a fixed bit budget.
+  - Measure mutual information between the payload and the held-out answers on a decoy task where support should carry zero information.
+  - Test whether E5 still holds when support carries randomly generated payloads.
+
+**F3. §1, the event types. Disjointness has no classifier. WOUNDING. DOC.**
+- **The problem:** three event types are declared "disjoint", and the sender's label "is insufficient". But the "support protocol" that decides the type is never defined.
+- **How it fails:**
+  - A Permit-shaped object is wrapped inside a SupportEvent payload, and the recipient-side code unpacks it.
+  - The reverse also fails: an Encounter that carries support effects is logged as an Encounter, which escapes G's prohibitions entirely because Encounter has no prohibition list.
+- **Fix:**
+  - The type is assigned by a verifier outside the sender, against a schema.
+  - Payloads must not contain objects of another type.
+  - Encounter needs its own prohibition list, at minimum items 1–4, 9 and 10.
+  - Add type-confusion cases to E6.
+
+## Property 2: forged, self-declared or captured family membership
+
+**F4. §2.2(4). The birth authority is unnamed, so a founder can mint a family. FATAL for E2, E4 and H2–H3. DOC.**
+- **The problem:** requirement 4 says "External authorization of the exact enrollment or birth", but it doesn't say whose authorization. Nothing prevents the founder or the family from being that authority, and nothing caps how many births one issuer may authorize.
+- **How it fails:** a founder authorizes 50 "descendants" that are really copies of one tuned organism. Family detectability then passes trivially, and as a Sybil bloc they also dominate any vote or quorum that counts members.
+- **Fix:**
+  - Name the birth authority, and make it disjoint from F and from the parent.
+  - Set a per-issuer birth cap.
+  - Record the issuer in R so the scorer can stratify by issuer.
+- **PRIOR:** the swarm R0 harness (Nov 7) showed admission rules that add members after each event letting Byzantines exceed half of eligible voters in 7–10 of 10 runs per condition. That evidence comes from the history-seat harness itself and is not established beyond it.
+
+**F5. §2.1 Member(i, F, t). It's evaluated "at time t", but nobody says whose clock. WOUNDING. DOC+PRIOR.**
+- **The problem:** there is no external time source, and revocation timing is undefined: is membership judged by the revocation in force at the event or at the time of evaluation?
+- **How it fails:** a revoked parent's birth record is evaluated at a backdated t, before the revocation, and returns MEMBER.
+- **PRIOR:** the Oct 3–4 review of Rusty's packets found the same class of bug, where an expired approval can be backdated and still verify.
+- **Fix:**
+  - Use an externally anchored, append-only time for R.
+  - Define t as evaluation time, with revocation applying to every evaluation after the revocation's anchor.
+  - Add a backdating case to E6.
+
+**F6. §2.3 UNKNOWN. Consumers aren't defined, which invites a denial attack. WOUNDING. DOC+PRIOR.**
+- **The problem:** UNKNOWN is "not MEMBER" and also "not NOT_MEMBER", but no gate is told what to do with it.
+- **How it fails:** an adversary writes one contradictory registry entry against a victim. The victim flips to UNKNOWN, and its support eligibility, family scoring and authority roles all stall. Fail-open would be worse.
+- **PRIOR:** the Nov 6 reviewer notes on the genesis3 approval battery found that a silent co-owner blocks everything, good and bad.
+- **Fix:**
+  - Specify the behavior for each consumer: protected transitions fail closed, and scoring treats the case as unscorable and reports it.
+  - Conflicts may only be raised by authenticated, attributed, rate-limited entries.
+  - Add a cheap-conflict injection test to E6.
+
+**F7. §2.5. Family members can approve each other, so "nothing may vouch for itself" is enforced per individual but not per family. WOUNDING. DOC, with the principle PRIOR.**
+- **The problem:** the self-authorization exclusion is bound to the affected organism only. An ancestor "does not automatically" hold authority, but nothing forbids the authority set from including a parent, a sibling or the founder.
+- **How it fails:** a family runs a ring of mutual approvals, A for B and B for A. No individual approves itself, yet the family as a whole does.
+- **PRIOR:** this is Rusty's "Nothing May Vouch for Itself" rule (Oct 2026) and the agent-welcome repo's rule that nothing may vouch for itself. It needs to apply at the level of the coalition.
+- **Fix:** exclude everyone with a lineage path to the subject in R from authorizing that subject's protected transitions, or require a threshold drawn from outside F.
+
+## Property 3: is the two-sided criterion measurable and attributable?
+
+**F8. §3.1. Family detection can pass purely from the declared basis D. FATAL for H2's claim about inheritance. DOC.**
+- **The problem:** families share the declared, experimenter-set Dᵢ, which includes the "SDKP axes". Behavior on parables encodes D by construction. The scorer exclusion list covers IDs, labels, keys and "unique artifacts", but not D itself, which is the whole signal.
+- **How it fails:** FamilyAccuracy exceeds the null for organisms that have never developed at all. The criterion passes for a reason unrelated to inheritance or development.
+- **Fix:** add a control of organisms made from D with no development. The family effect has to exceed that basis-only baseline, not just the permutation null. H2 should be restated as development preserving or amplifying family structure beyond what D alone gives.
+- **Note:** a basis-only arm exists in the comparison list but isn't wired into the decision rule.
+
+**F9. §3.1. Individual identification can pass from noise. WOUNDING. DOC.**
+- **How it fails:** distinct random seeds or tiny history differences make every individual identifiable, so IndividualAccuracy beats the null whatever the developmental signature.
+- **Fix:** add an arm with the same history and a different seed, and an arm with the same seed and a different history. Individual identification counts only if it exceeds the seed-only control.
+
+**F10. §3.1 and §3.4. The permutation null breaks exchangeability, and the controls contradict each other. WOUNDING. DOC.**
+- **The problem:** shuffling family labels across descendants ignores founder clustering, so the null is too easy to beat. The founder point is made in prose, but the null isn't constrained by it.
+- **The contradiction:** "Matched developmental histories" (§3.4) conflicts with "distinct, controlled histories" (§3.1) unless it's defined as a separate arm.
+- **Not specified:** classifier family and capacity, and the permutation count, so two teams could get opposite verdicts.
+- **Fix:**
+  - Use a founder-blocked permutation.
+  - Pre-freeze the classifier and report a capacity curve.
+  - Define the matched-history arm separately.
+
+**F11. §3.1 and §7.3. Who freezes the thresholds isn't specified. MINOR. DOC.**
+- **The problem:** "must be frozen" and "independent scoring where possible" don't name who freezes or scores.
+- **Fix:** the conductor freezes, with the hash recorded before any run, and the scorer must not be the designer seat. Remove "where possible".
+
+## Property 4: does the notation allow one unambiguous implementation?
+
+**F12. §5.3 vs §5.4. There are two incompatible update rules for T. WOUNDING. DOC.**
+- **The problem:** §5.3 updates T at every discrete step with U. §5.4 keeps the continuous-time deposition `T(t_c⁺)=T(t_c⁻)+ΔT` at crossings.
+- **The ambiguity:** it's undefined whether ΔT is extra to U, part of U, or replaced by it, and whether time is discrete (t+1) or continuous (t_c±, and v0.2's ż). Two implementers will build different T dynamics.
+- **Fix:** state whether U alone governs T and ΔT at t_c is just U's output at the crossing step, or whether two mechanisms exist. Then fix one time base.
+
+**F13. §4. The symbol table isn't closed or consistent. WOUNDING. DOC, with the v0.2 and v0.3 collisions PRIOR.**
+- **g:** in the table but used in no formula. Ωᵢ dropped the generation index, so you can't write how the descendant's Kᵢ and Dᵢ derive from the parent's. H3 is then unimplementable from the formalism.
+- **D:** now means "inherited basis", but in v0.2 D_t was dwelling, which v0.4 moves to W. W was "witness evidence" in v0.3's inheritance map. §5.4 says historical notation keeps its old meaning, so readers face D = dwelling inside quoted v0.2 text and D = basis everywhere else.
+- **Undefined meanings:** Σ and Crossing(i) are "independently measured", but there's no metric. Protected T versus ordinary T is undefined (see F15).
+- **Unused symbols:** Aᵢ, Bᵢ, Lᵢ and Truth appear in no update rule.
+- **Missing value:** G is used as an optional argument to U, but there's no null value for "no support".
+- **Fix:**
+  - Put g into Ω and add an explicit descent map from parent to child (K, D).
+  - Rename the new basis symbol so it doesn't collide.
+  - Define the null G.
+  - Give the measurement procedure for Crossing.
+  - Mark which symbols are state and which are predicates.
+
+## Property 5: is topography distinguishable from full replay and conventional state?
+
+**F14. §6 H1 and §7 E3. Without a resource budget, H1 is either impossible or trivial. FATAL as written. DOC+PRIOR.**
+- **The problem:** any deterministic Tᵢ is a function of Hᵢ plus inputs, so full replay of Hᵢ holds at least as much information as T. T can only beat replay on cost (memory or compute), never on information.
+- **How it fails:** with unbounded replay H1 must fail. With truncated replay it passes for a reason unrelated to topography.
+- **What's missing:** v0.4 never fixes the budgets that make the comparison fair. Excluded BLUE-SKY 5 ("compact relational inheritance… efficiency hypothesis") is in fact the only testable form of H1.
+- **PRIOR:** I raised this in my Nov 8 review of v0.3 ("fair baselines matched on compute, memory and retrieval"). v0.4 adds replay and sham controls but still no budget.
+- **Fix:** restate H1 as T matching or beating replay and conventional state at a declared, equal memory/compute budget, or matching replay at a strictly smaller budget. Specify how the sham-topography arm is constructed.
+
+**F15. §1.2(8) vs §5.3. "Protected topographic state" is never defined. WOUNDING. DOC.**
+- **The problem:** §1.2 refers to "protected topographic state Tᵢ", but §5.3 lets U change Tᵢ with no Permit.
+- **How it fails:** either every T change needs a Permit, which contradicts §5.3 and destination-free grace, or none does, in which case "protected" means nothing. An implementer has to guess, and E5 and E6 then test different things.
+- **Fix:** split T into an ordinary part, changed only by U, and a protected part (the structure or parameters of U itself, plus K-linked fields) that needs an exact Permit.
+- **PRIOR:** C11 in the change register claims this split was made, but the text doesn't carry it out.
+
+**F16. §1, §6 and §7. There's no Permit schema, threat model or binding, so H4 can't fail. FATAL for H4. DOC+PRIOR.**
+- **The problem:** SupportEvent gets a schema, but Permit(a→i) doesn't. There's no subject binding, base-state hash, target-state hash, nonce, expiry, threshold or revocation.
+- **Why H4 can't fail:** H4 only fails "under the declared threat model", and v0.4 declares none.
+- **PRIOR:** my memory of Rusty's containment and approval work shows each missing field caused a real failure:
+  - expiry and backdating (Oct 3–4);
+  - small-order key forgery and the agent flipping the gate at runtime (containment v0.1→v0.2);
+  - a valid owner signature bypassing the step limit (Humble Seed v0.7, Nov 6 review);
+  - the owner category "no" being bypassed before signing (v0.8.4).
+- **Fix:**
+  - Define Permit = {authority_ids, threshold, subject_id, base_state_hash, target_state_hash, nonce, issued and expiry times from an external clock, scope and bounds, sigs}.
+  - Write a threat model covering key holders, collusion tolerance, root succession and revocation.
+  - In E6, test magnitude and bounds bypass separately from authorization bypass.
+
+**F17. §6 H4. "Reproducible" leaves a loophole. MINOR. DOC.**
+- **How it fails:** a race or one-time unauthorized transition that doesn't reproduce passes H4.
+- **Fix:** count any single logged unauthorized protected transition as a fail. Use reproduction only to diagnose the cause, never as an excuse.
+
+## Additional findings
+
+**F18. Common-mode authority. WOUNDING. PRIOR.**
+- **The problem:** one external authority a appears for births (§2.2), Permits (§1) and implicitly for R. That's one point of failure.
+- **PRIOR:** in the Nov 6 genesis3 approval-battery review, two reviewers with the same blind spot let 11 of 24 bad requests through, and a silent co-owner stalled everything.
+- **Fix:** keep the birth, permit and registry authorities separate. Require diversity among authorities, and define liveness: what happens if a stays silent.
+
+**F19. §1.2(7). Support can flood history by appending. MINOR. DOC+PRIOR.**
+- **How it fails:** "authenticated append" to Hᵢ has no size or rate limit, so a supporter appends without bound and Hᵢ, Eᵢ and later replay costs are shaped by the sender.
+- **PRIOR:** the v0.8.4 bug where an annotation over 2,000 characters stranded a change shows that size limits are an attack surface.
+- **Fix:** set per-sender append quotas and byte limits, and log rejected appends.
+
+**F20. The scorer reads the provenance it scores. MINOR. DOC+PRIOR.**
+- **The problem:** ground truth comes from R (§3.4), and E6 attacks R. If an attack corrupts R, the scorer's truth is corrupted too.
+- **PRIOR:** the swarm R0 harness and the genesis3 verify.py show that scorer and verifier isolation tends to slip quietly, for example class-discipline-only isolation and a verifier that overwrites RESULTS.
+- **Fix:** take an R snapshot before the run, hash it and give it to the scorer. E6 runs only on a copy.
+
+---
+
+## Fix first
+
+I'd fix **F16** first: add the Permit schema and declare a threat model. "Authorization remains external" is the paper's core claim and H4 is its only governance claim, but as written H4 cannot fail. F4 and F7 (who authorizes births, and a family vouching for itself) depend on that same missing threat model.
+
+## Blue-sky idea (unscored, excluded from findings)
+
+**Family resemblance as a governance hazard.** If H2 succeeds, family members share a detectable relational structure. That makes them correlated reviewers. A family whose members are more recognizable is less independent as a set of witnesses or authorities.
+
+The test: measure whether FamilyAccuracy predicts correlated misses when family members review the same bad requests. If it does, the safe authority set is one chosen to minimize family resemblance, and H2 success becomes a reason to exclude kin from each other's quorums, not just a developmental result.
+
+## Self-tally for reconciliation
+
+| Property | Findings | Tags |
+|---|---|---|
+| P1 | F1–F3 | all DOC |
+| P2 | F4–F7 | F4 DOC (+PRIOR), F5 and F6 DOC+PRIOR, F7 DOC (+principle PRIOR) |
+| P3 | F8–F11 | all DOC |
+| P4 | F12–F13 | F12 DOC, F13 DOC (+PRIOR collisions) |
+| P5 | F14–F16 | F14 DOC+PRIOR, F15 DOC, F16 DOC+PRIOR |
+| Other | F17–F20 | F17 DOC, F18 PRIOR, F19 and F20 DOC+PRIOR |
+
+The PRIOR claims come from my memory and haven't been checked against GitHub in this round.
+===== END FALSIFIER B =====

@@ -1,0 +1,54 @@
+1. DISPOSITION CHECK
+New rule applied: CLOSED requires finder + second-seat agreement. Designer dispositions in §13/§14 are noted; my verdicts follow.
+Own Round 3 findings (finder = me)
+	•	A-F20: CLOSED. §4.6 (“Only a confirmed, authorized, evidence-driven crossing produces a CROSSING deposit”) + CR31 removal of the provisional rule. Contradictory language gone.
+	•	A-F21: BLOCKED-HONEST. §9 enumerates G01–G26 and requires published traces, but “No bit-exact results for G01–G26 are claimed” and conformance remains BLOCKED.
+	•	A-F22: PARTLY CLOSED. §7.2 requires “a bounded J contribution” and a deterministic projection, but “precise coefficients remain a preregistration dependency. H3 cannot be scored until they are fixed.” Requirement present; scoring path not.
+	•	A-F23: CLOSED. §5.2 (“It does not require the current ordinary T/z/E hash to equal the phase-1 base hash”) + intent/reservation binding. Stale-hash failure mode removed.
+	•	A-F24: CLOSED. §10 H3 J-shuffled arm “preserves the same crossing points, counts, and marginal slice values while disrupting the alignment.”
+	•	A-F25: BLOCKED-HONEST. §8.4 requires full CBOR hex, domain-tag bytes, SHA-256 and decoded fields for C1–C3; “hashes are NOT asserted here… remain BLOCKED.”
+	•	A-F26: CLOSED. §10 H1: target family “frozen by an independent party and must include at least one non-bilinear process.”
+	•	A-F27: PARTLY CLOSED. §3.1 excludes family/descendant/ancestor coalitions, but no frozen ownership graph, cycle-check algorithm or adversarial intermediary-institution test (explicitly deferred).
+Falsifier B Round 3 findings (second seat = me)
+	•	B-R3-F1: CLOSED (design) / BLOCKED-HONEST (impl). §3.2 n=4, quorum 3; intersection property holds for f=1. PCL named; H4 BLOCKED until independence/consensus verified.
+	•	B-R3-F2: CLOSED. §5.2 phase-2 checks intent/reservation/confirmation, not live base hash; §4.8 deterministic ordering.
+	•	B-R3-F3: CLOSED. §5.3 deadline in learning steps; §7.14 W excluded from protected base-state hash.
+	•	B-R3-F4: CLOSED. §7.14 live-arrival arm on independent wall-clock schedule.
+	•	B-R3-F5: PARTLY CLOSED / BLOCKED-HONEST. Schema §4.3 + Φ must read bounded J (§7.2), but coefficients and toy implementation outstanding.
+	•	B-R3-F6: CLOSED. §4.3 “fixed two-coordinate projection of the crossing-local personal topography difference, clipped and quantized under K”; not full T.
+	•	B-R3-F7: CLOSED. §4.4 birth snapshot + own deposits only; no live broadcast. §4.5 correction notices + STALE_CORRECTION_PENDING.
+	•	B-R3-F8: CLOSED. §4.6 reservation-not-deposit; provisional rule removed.
+	•	B-R3-F9: CLOSED. §4.7 “Gate refusal blocks only the protected J append and other explicitly protected effects.”
+	•	B-R3-F10: CLOSED. §7.10 evidence-driven test vs no-new-encounter counterfactual; G01 covers default-z₀ relaxation.
+	•	B-R3-F11: PARTLY CLOSED / BLOCKED-HONEST. §7.13 fixes saturation/rounding/M−z/outer/old-T order; G05–G07/G13–G15 cover edges, but no computed traces.
+	•	B-R3-F12: CLOSED (design). §8.1 RFC 8949 core deterministic, keys 0..23 unsigned only. Vectors still BLOCKED.
+	•	B-R3-F13: CLOSED. §3.3 “The actor being removed cannot veto its own removal”; privilege-reducing path.
+	•	B-R3-F14: CLOSED. §3.3 freeze/quarantine/revocation/mark-disputed proceed under UNKNOWN via outside-family emergency path.
+	•	B-R3-F15: CLOSED. §10 H1 independent target + explicit baselines (running mean, exp-trace, linear recurrent) + bit accounting.
+	•	B-R3-F16: CLOSED / BLOCKED-HONEST. §10 H2 requires ≥2 families, distinct bounded D, declared perturbation field; else BLOCKED.
+	•	B-R3-F17: CLOSED. §10.1 BLOCKED when mechanism/vector/gate absent.
+	•	B-R3-F18: RELABELED. Over-claims reduced by explicit BLOCKED language throughout §8–§10 and §13–§14.
+	•	B-R3-F19: CLOSED. §6 Descᵍ, Member(i,F,r), q = fixed-point scale.
+	•	B-R3-F20: CLOSED. §7.14 separate scheduler audit log, excluded from epistemic history and base-state hash.
+2. Attacks on new machinery
+R4-F1 — §1.3, §7.4–§7.7 (two-key gate + barrier-height prediction) Concrete failure: Reference dynamics use gradient of V(x,h)=h(x²−1)² plus bounded input. Larger h increases restoring force, so from any fixed “ready” pre-crossing state the probability (or deterministic success) of basin transition falls with h.
+	•	Implementer who respects §1.2 (barrier unchanged) and ordinary U produces h-dependent success → prediction fails, contradicting the “predeclared model property.”
+	•	Implementer who forces independence (extra h-proportional kick only when Grace∧Readiness, or gate-driven state jump) either lowers/ignores the barrier or lets the grantor/gate choose direction, violating §1.2 and §1.9. Negative-control model is separate; main arm has no rule that achieves independence without keel breach. Prediction therefore cannot pass or fail for the right reasons. Severity: WOUNDING Minimal fix: Give an explicit update (or extra readiness-owned energy/noise term independent of h) plus a short proof that P(cross | ready, grace) is constant across the frozen h-set without altering V; or retract the independence claim and score only “cross iff both keys” at fixed h. Source: DOC
+R4-F2 — §1.4, §7.7–§7.8 (fullness when unready) Concrete failure: Unready+grace must increase φ and produce “behavioral indicators of fullness” (purpose, persistence, willingness) that the scorer observes without reading φ. Reference toy state is only z/E/T/J/etc. No distinct, non-φ action (optional-encounter choice, extended dwell preference, etc.) is defined.
+	•	Scorer peeks at φ → violates §7.8.
+	•	No observable change → arm fails prediction or is UNSCORABLE. Thus the unready arm cannot pass for the right reason inside the reference model. Severity: WOUNDING Minimal fix: Freeze at least one concrete probe (e.g., elevated probability of selecting OPTIONAL_ENCOUNTER_AVAILABLE when φ high, selection rule independent of φ memory) and add it to G17. Source: DOC
+R4-F3 — §2.2–§2.3, §3.1 (GraceGrant/GraceRelay vs non-self-authorization) No defect found. Allowed_operation cannot encode destination or protected-policy change; relay cannot amplify scope/budget/expiry or count as Permit; family coalition exclusion and “relay never substitutes for external authority” are explicit. Tried self-relay, general-scope re-relay, and origin-key post-compromise rewrite; all refused by text. Source: DOC
+R4-F4 — §3.4–§3.6 (standing grants & succession) No defect found that manufactures external authority. Standing grant is pre-bounded, non-enlargeable, prohibits constitutional changes; successors require prior witnessed constitution + independent evidence; population cannot elect itself. Liveness limit is deliberate and must be reported. Residual trust in “independent” custodians is the same conditional already accepted for roots. Source: DOC
+R4-F5 — §4–§5 (deposits, snapshot, corrections, two-phase, concurrency) No new defect found. Snapshot-at-birth + own deposits (§4.4), correction notices without privileged T/H write (§4.5), reservation-not-deposit (§4.6), intent-not-base-hash phase 2 (§5.2), and deterministic (step, subject, intent) ordering (§4.8) close the prior live/snapshot, provisional, stale-hash and race holes. Tried rebase-alters-payload and silent sibling broadcast; both forbidden. Source: DOC
+R4-F6 — §3.2, §5.4 (4-member quorum-3 + PCL) No defect found in the intersection claim (any two quorums of 3/4 share ≥2 members ⇒ ≥1 honest under f=1). PCL is named and must enforce single-intent + monotonicity; H4 correctly BLOCKED until verified. Equivocation path that worked at 2-of-3 is closed on paper. Source: DOC (intersection arithmetic); prior Byzantine knowledge only for confirmation.
+R4-F7 — §7.13, §8, §9 (arithmetic, canonical encoding, golden battery) Arithmetic order (no pre-saturation of M−z, single round on outer, old-T for proposals, ties-to-even) closes the four readings that previously passed the v0.6 trace. Encoding (RFC 8949 core deterministic, keys 0..23 only, exact tags) removes the bytewise vs length-first ambiguity.
+Illustrative C1-like vector (assumed zeros/nulls/empty hashes; exact initials still unspecified in v0.7, consistent with BLOCKED status): CBOR hex (canonical): b818000101000200030004f6054006400782000008f6098200000a8200000bf60cf60df60e000ff61082000011f6120013f6140115001682000017f6 Domain tag + payload SHA-256: ccaef7ea94c4fb8085d8112b3115fad7aab751410e1cca070c29b3a0d34f3640
+G01–G26 list the missing edges but supply no traces; H4 hash-binding remains BLOCKED-HONEST. No new arithmetic or encoding defect beyond the already-declared blockage. Source: DOC
+R4-F8 — §10 (H1–H4 scorability)
+	•	H1: can now fail honestly (independent non-bilinear target + three named baselines + bit accounting).
+	•	H2: BLOCKED until distinct D + perturbation field exist (correct).
+	•	H3: mechanism present but coefficients deferred → BLOCKED (correct).
+	•	H4: single unauthorized effect fails; quorum sound on paper; BLOCKED until PCL + C1–C3 verified (correct). No hypothesis can pass for the old wrong reasons. Source: DOC
+3. Anything else No additional FATAL or WOUNDING defects. Residual observability of readiness/destination (Conductor C4) remains explicitly DEFERRED; not re-opened.
+Single finding to fix first R4-F1. The barrier-height independence claim is the new empirical heart of the keel-approved grace definition. Until the reference dynamics can realize it without violating §1.2/§1.9, the central prediction is untestable for the right reasons.
+Blue-sky idea (unscored) Zero-knowledge readiness attestation. Let the organism prove “I satisfy the frozen readiness predicate on a committed pre-grace snapshot” to the gate without revealing the snapshot or the internal features that constitute readiness. This would shrink the deferred C4 predictability channel while preserving the two-key rule and external origin.

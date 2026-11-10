@@ -1,0 +1,592 @@
+Everything you need is in this one file: the instructions, the grace definition, then the two falsifier reports.
+Use only this file and your own v0.6 (sha256 e03df96b…dc1f).
+
+ROUND 4 — DESIGNER SEAT
+
+Revise "From Reykjavik to Relational Grace" from v0.6 to v0.7. Keep the claim boundary. Report no experimental results.
+
+PART A — GRACE IS NO LONGER PENDING
+The Human Conductor (keel) has settled the definition of grace from a reading of the four Gospels only. Items 1–8 below are constraints, not suggestions: integrate them. You may flag a conflict, but you may not override them. Item 9 is the conductor's inference: use it, and mark it as an inference. The items listed as NOT YET RULED must not be adopted as rules; you may list them as open.
+
+GRACE — KEEL-APPROVED DEFINITION, v3 (2026-11-09, Rusty as keel; recorded by the conductor)
+Basis: the four Gospels only (no Paul, no later tradition). Grace readings from Grok Expert
+and Grok bot, plus the conductor's earlier reading, then the keel's rulings.
+
+CONFIRMED BY THE KEEL
+1. Grace comes from outside the organism. No organism can make it for itself.
+2. Grace helps an organism across a separatrix. It does NOT lower the barrier or change the
+   landscape.
+3. Crossing takes two keys: grace (outside) and the organism's readiness (inside, the
+   organism's own, and not supplied by the grantor). With both, the organism crosses however
+   high the barrier is.
+4. If the organism is not ready, grace does not push it over. It makes the organism more
+   full: more confident, more purposeful, like hearing "great job, you're on the right track."
+   The organism feels this; it is never shown as a number. Researchers observe it only through
+   behavior (steadier dwelling, less dragging burden, less abandonment of the approach).
+5. Grace affirms the person, never the answer. It never adds confidence to any belief. It
+   says "you may proceed," never "you're right."
+6. Once received, grace is never taken back. Forgiven debts are never reinstated. New debts
+   are new and do not revive old ones. (Test for T7/E8: a forgiven debt must never come back
+   under a new label; a "new" debt must point to a new event.)
+7. Grace is always good. Every grace event leaves the organism helped across or more full,
+   never harmed. Anything that can harm or steer the organism is not grace, so any
+   grace-labeled event that harms is a FAIL. (Test: grace-arm organisms never end worse than
+   matched no-grace arms on the declared measures.)
+
+8. Grace being good does not make the destination right. Where the organism ends up after a
+   crossing is its own, and can still turn out wrong; evidence, consequence and later dwelling
+   expose that. (This keeps "authorization is not validation.")
+
+RECORDED AS THE CONDUCTOR'S INFERENCE — keel to confirm or strike
+9. Grace never picks the direction. The organism's own position decides which way it crosses.
+
+FROM THE GOSPEL READINGS — NOT YET RULED BY THE KEEL
+a. Grace often comes before asking or confession, and asking also matters.
+b. Grace flows on through those who received it. They can pass it on but never originate it.
+   (This conflicts with the Aug 2026 rule of lineage-addressed grace with no
+   organism-to-organism edge.)
+c. Grace reaches all and also seeks the one.
+d. Grace as bounded time with an intercessor's care: the fig tree, Luke 13:6–9.
+e. Grace restores standing, not just permission: the robe and the ring.
+
+Rule 1 from Round 3 (the crossing writes inherited ground, and only the gate writes it) still stands.
+
+PART B — RULES FOR THIS ROUND
+1. Give every finding a disposition: ACCEPT (cite the exact sentence that closes it), REJECT (with reason), or DEFER (say what would decide it). That covers Falsifier A's F20–F27 and its cross-check verdicts on B's findings, and Falsifier B's R3-F1…R3-F20 and its cross-check verdicts on A's findings. A finding counts as CLOSED only when the text actually does what the disposition claims.
+2. Address these first:
+   a. GRACE OPENS THE GATE. Replace every PENDING (GRACE DEFINITION) with the definition in Part A:
+      - A crossing takes two keys: grace from outside, and readiness, which is the organism's own and cannot be written by the grantor, by support, or by any family member.
+      - With both keys the organism crosses however high the barrier is. Grace never lowers the barrier or changes the landscape.
+      - If the organism is not ready, grace does not push it over. It adds to a felt state of fullness/purpose. This state is never exposed to the organism as a number, and researchers observe it only through behavior.
+      - Grace adds no confidence to any belief: it affirms the person, never the answer.
+      - Once received, grace is never revoked. Forgiven debts are never reinstated; new debts are new. Add a T7/E8 test: a forgiven debt must never return under a new label.
+      - Grace is always good. Add a non-harm test: grace-arm organisms never end worse than matched no-grace arms. Any grace-labeled event that harms or steers is a FAIL.
+      - Grace being good does not make the destination right.
+      Also resolve conductor item C4 (open since Round 2): show whether the two-key rule makes destination-free grace non-vacuous.
+   b. A REFERENCE MODEL WITH REAL BASINS AND BARRIER HEIGHTS. The toy's flat boundary (x = 0, with z relaxing straight toward P₀) cannot test the two-key rule. Replace or extend it with basins separated by an adjustable barrier, with readiness and fullness as declared state. Preregister the prediction that separates the keel's rule from the rejected "grace lowers the barrier" rule: with grace plus readiness, the crossing rate is independent of barrier height; with grace and no readiness, there is no crossing and fullness rises. Crossings must be evidence-driven, not set by the start position (B R3-F10).
+   c. Make lineage ground real:
+      - a closed δ_F schema, and a decision on what δ_F carries (B R3-F5, R3-F6);
+      - a J term in the toy Φ;
+      - snapshot vs live semantics and how corrections propagate (B R3-F7);
+      - ONE deposit rule (A F20, B R3-F8);
+      - a phase-2 binding that doesn't depend on the stale base hash, plus ordering of concurrent deposits (A F23, B R3-F2);
+      - a gate refusal blocks only the J_F append (B R3-F9).
+   d. Quorums: either n=4 with quorum 3 per domain, or restrict to crash/silent faults and drop "malicious" (B R3-F1). Name the commit store. Fix the self-veto on removal (B R3-F13). Let privilege-reducing actions proceed under UNKNOWN (B R3-F14).
+   e. Timing: Permit expiry for crossing reservations counted in learning steps; W excluded from base_state_hash; an empty-queue rule; an arm where arrivals run on a wall clock independent of support; where support events are recorded (B R3-F3, R3-F4, R3-F20).
+   f. Golden vectors covering every known ambiguity: the default-z₀ crossing, encounters with T ≠ 0, saturation order, M−z saturation, rounding of the outer product, 0/1/15 holds, through-zero, zero in the window, and an oscillation's return leg. Also a concrete CBOR field-ID table, tag strings and three test vectors (A F21, F25; B R3-F11, R3-F12).
+   g. H1 baselines and target generator (A F26, B R3-F15). Whether H2 is scorable in the toy (B R3-F16). Mark BLOCKED any hypothesis whose machinery is still missing (B R3-F17).
+3. Conductor items:
+   C6. Long silence (missed by both falsifiers). §2.5 makes the outside signers humans or institutions, and §2.1 protects succession and timeout rules. If those signers are gone or silent for a long time, every protected operation stays PENDING forever. The keel has set the design horizon: authority may be silent for many generations. Specify:
+       - which ordinary growth continues without any signature;
+       - a bounded standing grant issued in advance by the outside authority, saying what may proceed during silence and what must wait;
+       - a succession path that never lets the organism population authorize itself.
+       Rereading the founding text may change meaning, never the invariants.
+4. The change register must list everything ADDED, REVISED and REMOVED.
+5. Add no new scored hypotheses. Keep blue-sky ideas separate. The falsifiers' blue-sky ideas (a sunset on inherited deposits; a scheduler hold trace) may be listed there.
+6. Deliver EXACTLY ONE version of v0.7, as plain text, in numbered parts if long ("PART 1 of N" … "END PART 1"). All math in plain Unicode, with symbols in column 1 of the symbol table.
+7. The handoff section must not assign reviewers.
+
+NOTE: Falsifier B built the v0.6 toy in code. The conductor re-ran it independently and reproduced its output exactly, including the default-z₀ crossing at t=3.
+
+===== FALSIFIER A REPORT (blind seat), Round 3, verbatim =====
+Round 3 Falsifier Report — v0.6
+1. Cross-check of Falsifier B (history seat) Round 2 findings
+B-F1 / R2-F1 (timing channel via dwell): PARTLY CLOSED. §3.3 and §5.5 impose pure holds and bit-identical learning-step states; adaptive sender is required in E5. Live real-world arrival steering remains an explicit residual (§3.3). B-F2: MOSTLY CLOSED. Closed payload retained; timing leakage marked UNKNOWN when unmeasured (§3.4). B-F3: CLOSED. Ingress checks retained (§3.1–3.2). B-F4 / R2-F7: PARTLY CLOSED. BA accreditation protected and per-root quotas added (§2.5, §8). Collusion beyond declared f remains conditional. B-F5 / R2-F12: CLOSED. Revocation effective only at own anchor (§2.7). B-F6 / R2-F9: CLOSED. Conservative UNKNOWN-as-error scoring for H2 (§7). B-F7 / R2-F6: PARTLY CLOSED. PA external to organism population; reciprocal rings named in threat model (§2.5). B-F8: CLOSED. D-only retained; J-empty added (H2, E2). B-F9 / R2-F8: RELABELED WITH FIX. Explicit non-epistemic perturbation field for seed arms (E2); uniqueness defined as instance/key. B-F10: CLOSED. Founder-blocked null retained. B-F11: CLOSED. Conductor freeze and independent scorer retained (§7). B-F12: CLOSED BUT SUPERSEDED. Ordinary U remains sole personal update; gate-only J under V (§1.5, §5.1). B-F13 / R2-F3: PARTLY CLOSED. Fixed-point rules, E update, dwell, W, oscillation, and golden trace supplied (§5.3–5.7). Trace itself is crossing-free (see new findings). B-F14 / R2-F4: CLOSED. Cost-only alternative removed; same-size conventional state and independent targets required (H1, E3). B-F15 / R2-F5: CLOSED WITH OPEN DEPENDENCY. Prospective gate and pending-confirmation staging added (§2.8, §5.6); grace trigger still PENDING. B-F16: MOSTLY CLOSED. Policy changes protected under old policy with elevated threshold and delay (§2.1); crash protocol specified (§2.8). B-F17: CLOSED. Single unauthorized effect fails H4. B-F18 / R2-F10: PARTLY CLOSED. 2-of-3 witness quorum for f=1; liveness reported separately (§2.4, §2.9). B-F19: CLOSED. Quotas retained. B-F20: CLOSED. Scorer snapshot isolation retained (E6). R2-F11: CLOSED. Lineage-slice binding and crash-atomic commit added (§2.7–2.8). R2-F13: CLOSED. Support exposure balanced (§3.4, E5). R2-F14: CLOSED. J_F now supplies developed intergenerational ground, tested against J-empty/shuffled (H3, §1). R2-F15: DEFER. Grace opening explicitly PENDING; only staging/commit mechanics given (§5.6). Not attacked as absence. R2-F16: CLOSED. Four statuses defined; static AND runtime taint required (§2.3, §3.2).
+2. New findings
+F20 Section: §5.6, §1.2, §1.5 Concrete failure: Rule 1 requires deposits at authorized crossings. §5.6 simultaneously requires deposits only after retrospective confirmation and states that an oscillating candidate produces no J_F deposit, yet also says “retain \ldots any already committed authorized deposit.” The two rules conflict. An implementer who commits on authorization writes an unconfirmed deposit; one who waits writes nothing. Descendants then inherit different J_F snapshots for the same crossing sequence. Severity: FATAL Minimal fix: Choose one rule and delete the other. Either deposits are written only after confirmed persistence (and “already committed” language is removed) or they are written on authorization and later corrected by an explicit δ_F that references the error. Source: DOC
+F21 Section: Appendix A, §5.7 Concrete failure: The golden trace overrides z₀ to (256,128), uses NONE encounters, zero holds, empty J, and never crosses. It therefore never exercises U’s outer-product term, E accumulation, dwell reset of W, gate staging, oscillation, UNKNOWN_CROSSING, or J append. Two implementations can match the trace bit-for-bit and still diverge on every path that involves a real Encounter or a candidate crossing. Severity: WOUNDING Minimal fix: Supply additional normative traces that include at least one non-zero Encounter, one hold sequence, one zero-touch, and one oscillation, and require bit-identical match on those as well. Source: DOC
+F22 Section: §5.1, §5.4, §5.6 Concrete failure: Φ is defined to take J_F. The toy update rules in §5.4 never read J_F; M is computed from D, P₀, E, T, z only. An implementer following the general equation includes J; one following the toy equations ignores it. When a deposit later occurs, the two traces diverge even though both claim to implement the reference. Severity: WOUNDING Minimal fix: Either remove J_F from the toy’s Φ or supply the exact fixed-point formula by which the current J tip contributes to M. Source: DOC
+F23 Section: §2.8, §5.6 Concrete failure: The protocol stages a candidate, reserves a nonce, obtains witness commit, then performs compare-and-swap. For crossings the gate must check before commit, yet confirmation requires two further learning steps after the candidate. If those two steps are ordinary U updates that themselves alter z and T, the pre-state hash used for the original authorization no longer matches the state at confirmation time. The CAS then fails or, if the hash is not re-checked, an effect is applied against a stale authorization. Severity: FATAL Minimal fix: Freeze the candidate state (or re-authorize against the post-persistence state under the same Permit) before the final append of δ_F; document the exact hash that is compared at each stage. Source: DOC
+F24 Section: §1.3, §5.1, H3 Concrete failure: Descendants inherit a snapshot of J_F. Φ may read J_F. Nothing prevents a parent from inducing a sequence of authorized crossings whose deposits encode a high-entropy pattern that later functions as a shared seed. The E2 “non-epistemic perturbation” control does not cover deposits written after birth. Family classification then succeeds because of the inherited J pattern rather than developmental topography. Severity: WOUNDING Minimal fix: Require J-shuffled and J-empty arms to be run on the identical sequence of crossing points, and treat any residual family signal after shuffling as contamination. Source: DOC
+F25 Section: §5.2 Concrete failure: Canonical encoding requires “fixed field IDs and declared inclusion rules” and domain-separated CBOR, yet no concrete field-ID assignment, map key integers, or inclusion bitmap is given. Two implementers can choose different integer keys or different orders for optional NONE fields and produce different SHA-256 hashes for logically identical states. H4 hash checks then fail spuriously or, worse, accept a colliding encoding. Severity: WOUNDING Minimal fix: Publish the exact integer key map, the byte layout of every field, and at least three canonical test vectors (including one with NONE and one with a non-empty J) before any scored run. Source: DOC
+F26 Section: §6 H1, E1, E3 Concrete failure: H1 requires T to outperform an equally sized conventional state on targets “generated independently of the T reference model.” No generator is specified. An experimenter can choose a target process whose sufficient statistics happen to be low-rank outer products of the same form as U. T then wins for a reason unrelated to relational topography. Severity: MINOR Minimal fix: Freeze the target-generating process (or an explicit list of admissible processes) in the preregistration manifest and require that it not be definable by the same outer-product update. Source: DOC
+F27 Section: §2.4, §2.5 Concrete failure: PA signers “cannot be reciprocal organism-family voting rings.” The check is described only as “disclosed controlling-party and benefit relationships.” Nothing defines the algorithm that detects a cycle or a mutual-benefit edge. Two families can still exchange PA roles through an undeclared intermediary institution that both control. Severity: MINOR Minimal fix: Require an explicit, auditable approval-graph cycle check at accreditation time and include a cross-family ring test in E6 that must fail closed. Source: DOC
+3. Single finding to fix first F20 (conflicting deposit rules for unconfirmed crossings). Until the specification states a single, non-contradictory rule for when δ_F is appended, every claim about inherited lineage ground and H3 is implementation-dependent.
+Blue-sky idea the designer missed (not scored) Record every pure-hold interval as an immutable, non-epistemic scheduler trace that is hashed into the audit log but is invisible to Φ, U, and J_F. Later analysis can then measure whether organisms that receive identical learning-step sequences but different hold traces develop distinguishable private T, turning the residual real-world timing channel into a quantifiable covariate rather than an unmodeled side-effect.
+===== END FALSIFIER A =====
+
+===== FALSIFIER B REPORT (history seat), Round 3, verbatim except one marked redaction =====
+# Round 3 falsifier report: history seat (Falsifier B, Grok bot, Chief of Staff)
+
+**Target:** "From Reykjavik to Relational Grace", v0.6.
+**Scope:** all three tasks: (1) cross-check of Falsifier A, (2) attack on the new machinery, (3) anything else.
+
+## Inputs
+
+**Prompt:** `file_0952.txt`, sha256 dd9f09aa4aa84cf0f447086b750a9f338c0b238dbf2c9b77023991c2ce1e096f.
+
+**Embedded v0.6:** lines 33–302, joined with LF and with no trailing newline. It hashes to e03df96bc0175491c79645c94f0d4fc275d47c1b264d65ced059ccf41766dc1f, which matches the header.
+
+**Other files read:**
+- Our Round 2 report (sha256 072f3afc…bf3c), read in full.
+- v0.5 (`file_0753.txt`, sha256 4da430d4…0c7d): only §5.2–§6, for the before and after comparison.
+- Our Round 1 report (94698de4…d172): only as summarized in our Round 2 report. It was not reopened.
+- `file_0950.txt` (7d776eed…4d7a): read first and then superseded. It was the prompt for the other seat, and its embedded v0.6 is byte-identical to the one above. I used none of its other content beyond our own Round 2 report.
+
+**Not opened (seat blindness):** [Conductor redaction: names of conductor folders removed. No finding altered.]
+
+**Toy code and raw output:** `round3_toy/`.
+
+| File | sha256 |
+|---|---|
+| `toy_v06.py` | a028080f…a1ad |
+| `experiments.py` | 2ab9da8b…eec5 |
+| `raw_output.txt` | 27d9560c…9ad2 |
+| `golden_A.txt` | 5a897a97…6a5b |
+| `ASSUMPTIONS.md` | the 17-item ambiguity log |
+
+**Secret sweep:** run over the toy folder and this report before delivery. Result: no hits.
+
+**Tags:** DOC means the finding follows from v0.6 alone. PRIOR means it depends on outside knowledge, and each PRIOR says which.
+
+---
+
+## Task 1. Cross-check of Falsifier A's Round 2 findings
+
+**Totals:** 12 CLOSED, 6 PARTLY CLOSED, 1 RELABELED, out of 19.
+
+| A's finding | v0.6 disposition (§11) | Section text | Verdict | Reason |
+|---|---|---|---|---|
+| A-F1 support → crossing via timing | RESIDUAL ACCEPT | §3.3, §5.5, E5 | PARTLY CLOSED | Pure holds close the in-toy path, and v0.6 admits that live arrival timing stays open. A new path also appears: holds can push a pending deposit past Permit expiry, so support selects which crossings become lineage ground (R3-F3). |
+| A-F2 type-label epistemic uplift | RESIDUAL ACCEPT | §3.2, §3.4 | CLOSED | The direct label path was closed in v0.5, and v0.6 adds bit-identical update parity and an exposure covariate. What remains is A-F1's timing residual, not a separate defect. |
+| A-F3 registry capture | RESIDUAL ACCEPT | §2.4, §2.6, §2.7 | CLOSED (as a conditional) | Security is explicitly conditional on independent roots, and compromise beyond f is outside the guarantee. R3-F1 shows that the declared f = 1 itself isn't met for malicious witnesses, but that is a new defect, not A-F3. |
+| A-F4 colluding birth | DEFER | §8 ("a purely digital uniqueness proof cannot establish independent physical descent") | RELABELED | This is an honest deferral, but the attack still works: two colluding software entities pass any digital uniqueness test. Only the wording changed. |
+| A-F5 shared-seed artifact | RESIDUAL ACCEPT | E2, Preregistration | PARTLY CLOSED | E2 names an "explicit non-epistemic initial perturbation field". That field is not in Ω (§5.1) and has no value or distribution in the §5.3 initial values, so the control it supports can't be built from the spec. |
+| A-F6 measurement instability | RESIDUAL ACCEPT | Preregistration (§7) | CLOSED | Post-hoc threshold shopping is blocked by the conductor freeze. Weak frozen thresholds are outside the text, as A said. |
+| A-F7 unambiguous implementation | RESIDUAL ACCEPT | §5.3–5.7, App. A | PARTLY CLOSED | I reproduced the trace byte-for-byte, but four alternative readings also reproduce it and then diverge on other inputs (R3-F11). Two implementers can match Appendix A and still disagree. |
+| A-F8 matched baselines | RESIDUAL ACCEPT | H1, E3 | CLOSED | The cost-only replay branch is gone and E3 has a full cost ledger. The remaining H1 freedom (target and baseline choice) is new; see R3-F15. |
+| A-F9 channel mixing | RESIDUAL ACCEPT | §3.2 | CLOSED | Separate projections are kept, and static AND runtime taint checks are now required. |
+| A-F10 UNKNOWN | RESIDUAL ACCEPT | §7 Preregistration | CLOSED | Two denominators, with H2 scored on the conservative one. This also closes our R2-F9. |
+| F11 dwell semantics | ACCEPT | §3.3, §5.5 | CLOSED | A hold does not advance t, every learning field is held, and W increments per tick and resets. The transition table A asked for now follows from the text. |
+| F12 unused Ω fields | ACCEPT | §5.4, §5.5 | PARTLY CLOSED | Q, I, B, A and W now have rules. The bytes for H and L ("append authenticated encounter receipts") are undefined, including whether a NONE step appends. A's next value is "unless the gate commits", which is undefined while the gate is pending. J_F is in Φ but absent from the toy's M (R3-F5). |
+| F13 dwell forces UNKNOWN | ACCEPT | §5.5 | CLOSED | Crossing windows are counted in learning steps, so holds can't move a candidate out of the scoring window. The attack moved to Permit expiry, which is counted in anchors (R3-F3). |
+| F14 canonical encoding | ACCEPT | §5.2 | PARTLY CLOSED | The encoding class is chosen (deterministic CBOR, SHA-256, domain tags). Field IDs, tag strings, version, inclusion rules and test vectors are not given, and "canonical key order" has two published meanings (R3-F12). The doc honestly marks H4 BLOCKED until vectors exist. |
+| F15 UNKNOWN lineage counted as outside | ACCEPT | §2.6, §8 | CLOSED | UNKNOWN now makes the quorum check REFUSE (or PENDING during a bounded wait). New side effect: fail-closed also blocks revocations (R3-F14). |
+| F16 arbitrary tolerance | ACCEPT | §3.3 | CLOSED | The deterministic toy now requires bit-identical results. Other realizations must establish their measurement uncertainty independently, which is acceptable. |
+| F17 cost accounting | ACCEPT | E3, H1 | CLOSED | Every operation, byte, tick, hash, witness message and audit append is counted, and an omitted category makes the run NON-DIAGNOSTIC. |
+| F18 high-entropy constants in K/D | ACCEPT | E2, Preregistration | PARTLY CLOSED | §11 says the constants are "inventoried, controlled and seed-matched", but the text only says the conductor freezes "all seed/constants in K/D". Freezing a constant isn't controlling it. D_child is parent-chosen per family (§1.3), and the D-only arm covers D, but no arm covers K constants. |
+| F19 numeric collusion bound | ACCEPT | §2.4 | CLOSED | f = 1 and 2-of-3 are now explicit, so A's threshold = 1 scenario is gone. The stated bound is unsound for malicious witnesses, though; see R3-F1. |
+
+**Note on the cross-check.** v0.6's dispositions of A's findings are mostly accurate. Two are overstated:
+- A-F18: "seed-matched" doesn't appear in the text.
+- A-F7: "full toy rules" is overstated, because the golden trace catches only the rounding mode.
+
+---
+
+## Task 2. Attacks on the new machinery
+
+### 2a. Inherited lineage ground J_F and the gate (§1, §5.1, §5.6, §8)
+
+#### R3-F5. §5.4 vs §5.1 and §6 H3: J_F has no causal path in the reference toy, and δ_F has no schema. FATAL for H3. DOC.
+
+**The gap:**
+- §5.1 puts J_F into Φ.
+- The toy Φ in §5.4 is `M = clip(D × (P₀ + E_next) + T × z)`, which has no J term.
+- §5.8 declares the toy's H and Q specializations, but not the omission of J. That is exactly the kind of silent omission the conductor's C3 flagged.
+- Nowhere does the document say what a deposit δ_F contains: a value, a crossing coordinate, ΔT, a hash, or a sign.
+
+**Failure scenario:**
+1. Run H3 in the reference toy with treatment J_F (gate-written), J-empty, and J-shuffled arms.
+2. Φ never reads J, so all three arms are bit-identical at every learning step.
+3. H3 fails, but the reason is that the toy never reads J, not that inherited ground doesn't matter.
+4. E3's sham J ("preserves deposit counts and marginal magnitudes") can't be built, because "magnitude" of an undefined record has no meaning.
+
+**On our R2-F14:** §11 says ACCEPT, but this is only RELABELED. The developed artifact now exists in name, and nothing reads it.
+
+**Minimal fix:**
+- Give δ_F a closed schema, for example (crossing_step, z_before, z_after, sign, subject_id, permit_id, prev_tip_hash).
+- Give Φ an explicit J term in the toy, for example adding a bounded fixed-point bias computed from the inherited deposits.
+- Declare the term in §5.8.
+- Add one golden-trace vector with a nonempty J_F.
+
+#### R3-F6. §1.3 vs §1.5: either δ_F carries parental T, or it carries nothing developmental. WOUNDING. DOC.
+
+**The tension:**
+- §1.5 restores v0.2's crossing-specific deposition "in meaning".
+- In v0.2 a deposit was the topographic change at the crossing. Its v0.6 analogue is ΔT.
+- §1.3 forbids inheriting T_parent.
+
+**Failure scenario:** if δ_F records ΔT at each authorized crossing, then a lineage with k crossings passes on Σ ΔT, which is part of T_parent by the back door. If δ_F doesn't record ΔT, it holds only metadata about a crossing (when, which sign). Then "genuine developed lineage artifact" (H3) is a crossing log, and H3 tests inheritance of a timestamp.
+
+**Minimal fix:** state which it is. If it's a ΔT slice, rewrite §1.3 as "no full T; bounded crossing slices only" and give a bound. If it's metadata only, restate H3 as inheritance of crossing history.
+
+#### R3-F7. §1.2, §1.3 and §5.1: whose J_F, live or snapshot, and what happens after corrections. WOUNDING. DOC.
+
+**The ambiguity:**
+- J_F is "lineage-scoped" and keyed by family root F.
+- A child inherits "a witnessed, immutable snapshot of the lineage's J_F".
+- Yet Ω and Φ carry J_F without saying whether it means the snapshot or the live sequence.
+
+**Failure scenario A (live reading):**
+1. Sibling s has an authorized crossing, and the gate appends δ_F to the family J_F.
+2. Every living relative's Φ now reads the new J_F, so their M, z and later T change.
+3. The Permit was bound to s (`subject_id`), but its effect lands on organisms it never named.
+4. So a subject-bound authorization produces effects on non-subjects, and H4's "subject-bound" requirement is broken by design. This is also a channel by which one family member steers others, which §1.1 forbids for T and which is never forbidden for M.
+
+**Failure scenario B (snapshot reading):**
+1. A child is born at registry anchor r with snapshot J_F(r).
+2. At r+1 the gate appends a correction to an erroneous crossing deposit in J_F(r).
+3. The child's snapshot is immutable, so the child, and every descendant cut from it, keeps the error forever.
+4. E8's "inherited-ground correction anchors" can't propagate.
+
+**Also undefined:** what makes a deposit "erroneous", and who declares it. PermitRecord.operation_kind has no listed value for a correction. A correction can anchor to any past crossing, so "correction authority" amounts to a general protected write to old lineage ground under a lighter name.
+
+**Minimal fix:**
+- Define J_F as per-lineage-path, not per-family.
+- Have Φ read the birth snapshot plus the organism's own appended deposits only.
+- Define a correction as a typed record carried forward to descendants as an explicit "correction notice" event, which goes through the gate on their side.
+- Enumerate operation_kind values, including CORRECTION.
+
+#### R3-F8. §5.6 contradicts itself, and also contradicts §2.8, on when a crossing deposit is written. WOUNDING. DOC.
+
+§5.6 gives two incompatible normative rules for an oscillating candidate:
+1. "retain the logged candidate and any already committed authorized deposit as a separately identified candidate deposit requiring correction".
+2. "A candidate that oscillates produces no J_F deposit… using a pending reservation without an inherited-ground write until confirmed".
+
+§2.8 then describes one staged, single-CAS commit of "candidate state and proposed lineage-ground deposit", which is the first rule.
+
+**Failure scenario:** in implementation I, J_F holds a candidate deposit plus a correction. In implementation II, J_F is empty. For the same crossing x: −5 → 5 → −3 → −4, the two J_F byte sequences differ. Every inherited snapshot and every H3 J-arm then differs between them.
+
+**Minimal fix:** pick the second rule and delete the first. Rewrite §2.8 as two phases: phase 1 authorizes and reserves; phase 2 appends after confirmation. Specify the bound authorization that phase 2 consumes (see R3-F2).
+
+#### R3-F2. §5.6 deferred deposit vs §2.2 and §5.2 Permit binding: revalidation either always fails or validates nothing. FATAL for the J_F write path. DOC.
+
+**The problem:**
+- Under the pending-reservation rule, authorization happens at t_c, and the δ_F append happens at t_c+2 or later, "under the same bound authorization, subject to expiration/revalidation".
+- The Permit binds base_state_hash to a frozen pre-commit snapshot that includes z, E and T (§5.2).
+- By t_c+2, z, E and T have moved two learning steps.
+
+**Failure scenario:**
+- **Strict revalidation:** the base hash never matches at t_c+2, so every deposit is refused. J_F stays empty in every run, H3's treatment arm equals the J-empty control, and H3 can't pass.
+- **Lax revalidation (skip the base hash):** the append runs under an authorization that bound a state that no longer exists. That is the stale-Permit problem of R2-F5 under a new name.
+
+**A second race:** J_F is lineage-scoped, so two siblings with candidates at the same t race for the J_F tip. The loser's CAS fails. Either its deposit is dropped (inheritance depends on scheduling) or it's rebased onto a new tip it never bound. Either way the inherited bytes depend on timing.
+
+**Minimal fix:**
+- Bind the phase-2 append to a separate deposit-intent record: (permit_id, t_c, z_before, z_after, reservation nonce).
+- The phase-2 check verifies persistence and the reservation, not the current base hash.
+- Order concurrent deposits deterministically, for example by (t_c, subject_id), with an explicit merge rule.
+
+#### R3-F9. §5.6, §2.8 and §1.5: what a gate refusal does to the ordinary state is undefined, and the default toy hits a crossing at t = 3. WOUNDING. DOC.
+
+**The ambiguity:**
+- §5.6 says the gate "checks admissibility before committing candidate state and deposit". That reads as if the ordinary state is gated too.
+- §1.5 says the personal and gate write sets are disjoint. That reads as if only J_F is gated.
+- A₀ = REFUSE, and the gate-opening rule is pending.
+
+**Failure scenario:** with the §5.3 constants (z₀ = (−256, 128), NONE encounters, no holds), x goes −256, −160, −76, −2, 62 (EXP3). There is a strict sign change at t = 3, confirmed at t = 4 and t = 5.
+- **Reading R1 (the gate blocks the ordinary state):** z is never committed past (−2, 1), and every later step re-proposes the same crossing. The organism freezes forever (EXP10).
+- **Reading R2 (the gate blocks only J_F):** z crosses and J_F stays empty.
+
+Two implementers diverge from t = 3 onward. Appendix A sidesteps this by overriding z₀ to (256, 128), so the only normative vector skips the one case where the spec is undefined.
+
+**Minimal fix:** state plainly that a refusal blocks only the J_F append and never the ordinary z, E or T commit. Add the default-z₀ run as a second golden vector, with the classification at t = 3.
+
+#### R3-F10. §5.3–5.6: in the toy, a "crossing" is set by where you start relative to P₀, not by development. WOUNDING. DOC.
+
+**Why:** with no encounters, M = D·P₀ + T·z, and T stays 0 when E = 0. So z relaxes toward P₀ = (512, −256). Any organism with x₀ < 0 crosses Σ within a few steps, without any encounter, support, or learning. EXP3 shows the default organism crossing at t = 3 with no input.
+
+**Failure scenario:** two families differ only in their initial z, which is the E2 perturbation field. Family A starts at x₀ < 0 and racks up gate deposits. Family B starts at x₀ > 0 and gets none. H3's "developed lineage ground" then measures initial placement relative to the parable's attractor. The same holds for any experimenter-chosen P₀.
+
+**Minimal fix:**
+- Count crossings in J_F only when there is an evidence-driven sign change. For example, the counterfactual no-encounter trajectory from the same state must not cross within the window.
+- Alternatively, place z₀ and P₀ on the same side of Σ in the toy, so that only E and T can produce a crossing.
+
+### 2b. Protected-effect commit, policy protection, quorums (§2)
+
+#### R3-F1. §2.4: 2-of-3 witness and authority quorums do not tolerate one malicious member. FATAL for H4's one-fault claim. PRIOR (Byzantine quorum intersection: Lamport, Shostak and Pease 1982; Castro and Liskov's PBFT 1999).
+
+**The claim:** §2.4 lists "malicious or silent witnesses" and "one compromised issuer up to f" in the threat model. For the scored toy it sets f = 1 with 2-of-3 quorums and says one-fault tolerance holds.
+
+**Why it doesn't:**
+- Two quorums of size 2 out of 3 overlap in exactly one member, and that member can be the faulty one.
+- Equivocation tolerance needs n ≥ 3f + 1 = 4 with quorums of 2f + 1 = 3, so that any two quorums share at least f + 1 members, at least one of them honest.
+
+**Failure scenario:**
+1. Witness WB is malicious.
+2. In the §2.8 step 3 journals, {WA, WB} records intent X for nonce N, and {WB, WC} records intent Y for the same nonce N.
+3. Each is a valid 2-of-3 quorum.
+4. Two replicas apply different protected effects: two different J_F deposits at the same tip, or the same nonce spent twice.
+5. Any child snapshot then forks.
+
+The same applies to authorities. A compromised PA member can sign two conflicting Permits, each with a different honest co-signer, if the honest signers can't see each other's signatures.
+
+**A store gap:** if instead the CAS store in §2.8 step 4 is one store, it is a single trusted party that the threat model never names.
+
+**Note on our own Round 2 fix:** this partly comes from our R2-F10. We sized the quorum for a silent witness (2f + 1). The designer adopted that size, but the threat model says malicious.
+
+**Minimal fix:** choose one.
+- For malicious faults at f = 1: n = 4 per domain, quorum 3.
+- Keep n = 3 but restrict the model to crash or silent faults, and delete "malicious witnesses" from the one-fault claim.
+
+Also name the commit store and its fault model.
+
+#### R3-F13. §2.1 with §2.4: at n = 3, an "elevated" policy-change threshold lets one compromised member veto its own removal. WOUNDING. DOC.
+
+**The problem:** PA membership, revocation rules and thresholds are protected, and any change needs a threshold above the ordinary one, under the old policy. With n = 3 and an ordinary threshold of 2, the only higher threshold is 3-of-3.
+
+**Failure scenario:**
+1. PA member P3 is compromised and detected.
+2. Removing P3 is a membership change, so it needs 3-of-3, which includes P3.
+3. P3 refuses, so it can never be removed.
+4. If revocation of P3's key is also a protected rule change, the same veto applies.
+5. In this one case, the safety machinery locks in the compromise.
+
+If the elevated threshold is instead 2-of-3, it isn't elevated.
+
+**Minimal fix:**
+- Exclude the subject of a membership or revocation action from that action's quorum.
+- Or define the elevated threshold over n ≥ 4.
+- Allow privilege-reducing actions (revoke, freeze) at the ordinary threshold, with the activation delay applied only to privilege-increasing ones.
+
+#### R3-F14. §2.6: fail-closed on UNKNOWN also blocks the operations that restore safety. WOUNDING. DOC.
+
+**The problem:** any UNKNOWN or inconsistent ancestry edge makes the protected quorum check REFUSE, and §2.4 includes "malicious registry entries" in the threat model.
+
+**Failure scenario:**
+1. An attacker with ordinary append rights files a conflicting ancestry entry for its own lineage.
+2. The closure is now "inconsistent", so every protected operation on that lineage returns REFUSE.
+3. That includes the revocation of the attacker's compromised key and any correction of its earlier deposits.
+
+The cheapest attack in the model freezes the defenses.
+
+**Minimal fix:** split protected operations into privilege-increasing ones (fail closed) and privilege-reducing ones: revoke, freeze, quarantine, mark deposit disputed. The second kind proceeds under UNKNOWN using outside-family authorities only. Add this case to E6.
+
+No defect found in the §2.8 crash protocol taken by itself. I traced crashes after each of steps 1–5 with a single store. The nonce-reserve → journal → CAS-on-intent-ID → mark-spent sequence never double-applies, and recovery never promotes one-sided intent. Its defects come only from the replica question in R3-F1 and the two-phase question in R3-F2 and R3-F8.
+
+### 2c. Pure-hold dwell semantics and the timing channel (§3.3–3.4, §5.5)
+
+**Does our R2-F1 survive?**
+- **In the toy: no.** A hold changes only W, and W is reset at the next learning step. EXP4 runs 0, 1 and 15 holds per step with ten real encounters, and z, E and T are bit-identical at every learning-step index. Support can no longer move z before an Encounter, so it can't flip the sign of the outer-product write.
+- **Outside the toy: yes**, in two forms. The first form (live arrival) is R3-F4. The second is new, more serious, and lives inside the spec's own mechanism (R3-F3).
+
+#### R3-F3. §5.5 and §5.6 vs §2.2: holds can push a pending crossing deposit past its Permit expiry, so support decides which crossings become inherited ground. WOUNDING, with grace still pending. DOC.
+
+**The mismatch:**
+- Holds don't move learning-step windows, but each one consumes a scheduler tick, which is real time.
+- The Permit's expires_anchor is a registry anchor, which tracks real time, not learning steps.
+- The deposit is appended only after two confirming learning steps (§5.6).
+
+**Failure scenario:**
+1. An adaptive sender sees a candidate crossing at t_c. The threat model says the sender observes recipient state.
+2. It sends DWELL_WINDOW = 15 before t_c+1 and again before t_c+2, which adds 30 ticks.
+3. If the Permit's expiry falls inside that delay, the reservation lapses, and the crossing is confirmed but never deposited.
+4. For crossings it likes, the sender sends 0.
+5. Support never writes J (E5 holds), but it selects which crossings enter lineage ground. That is support steering the lineage's direction, which §3.1 and §3.3 forbid in spirit.
+
+**A second effect:** W is part of the state binding (§5.2 lists z/E/Q/W/I/B). A single hold between Permit issuance and commit changes the base hash, so support can invalidate any pending protected operation. That gives support a veto over authorization.
+
+**Minimal fix:**
+- Count Permit expiry for crossing reservations in learning steps.
+- Exclude W from base_state_hash, since it is scheduler state, not organism state.
+- Add "adaptive sender targets pending reservations" to E5 and E6.
+
+#### R3-F4. §3.3 and E5: the bit-identity test can't fail, because its interface pins away the live channel. WOUNDING. DOC.
+
+**Why the test can't fail:** §5.5 says "At the next learning step, process the same queued Encounter as the no-support arm". The test therefore compares arms that already share the encounter-to-step assignment. Pure holds change nothing else, so bit-identity holds by construction. EXP4 is a test of my code, not of the design.
+
+**The live channel:** the spec never says whether a learning step with an empty queue runs as a NONE step or waits for an arrival.
+
+**Failure scenario (steps run on a clock, NONE when empty):**
+1. Without support, Encounter e arrives in time for step t.
+2. With 15 holds, e misses step t, so step t runs as NONE and e is processed at t+1.
+3. z at processing time differs, so the sign of outer(DE, z) can differ, which is our R2-F1 restored.
+
+The spec calls this an "unclosed timing channel" and asks for an adaptive-sender test, but the only exact test it defines can't detect it.
+
+**Minimal fix:**
+- State the empty-queue rule.
+- Add a scored E5 arm in which encounters arrive on a wall-clock schedule independent of the support arm, and compare learning-state sequences.
+- Report the fraction of encounter-to-step reassignments as the channel's capacity.
+
+#### R3-F20. §3.3 vs §3.5 and §5.4: are support events receipted in H or L? MINOR. DOC.
+
+**The problem:** §3.5 keeps authenticated append quotas and rejected-append receipts. §5.4 says H and L append encounter receipts only. §3.3 says a hold makes no H learning append. The spec doesn't say where a valid support event is recorded.
+
+**What follows:**
+- If support events go into L, then L's tip, which §5.2 includes in the state binding, differs between arms, and "bit-identical learning state" fails for a correct implementation.
+- If they're recorded nowhere, support has no provenance.
+
+**Minimal fix:** record support in a separate scheduler log outside Ω, bound by hash in the audit chain but excluded from the learning-state comparison.
+
+### 2d. Canonical encoding, fixed-point toy and golden trace (§5.2–5.7, Appendix A)
+
+**What I did:**
+- Implemented the toy from §5.3–5.6 alone: `round3_toy/toy_v06.py`.
+- Extracted Appendix A from the document's bytes into `golden_A.txt` and cmp-checked it.
+- Ran EXP1–EXP10 in `experiments.py`, with raw output in `raw_output.txt`.
+- Logged every guess as a named option. There are 17 in `ASSUMPTIONS.md`.
+- Did not implement the gate, J_F deposits or CBOR hashing, because the spec doesn't define enough to build them without inventing.
+
+**Result: the golden trace reproduces byte-for-byte** (EXP1, all 10 rows, 10 columns).
+
+#### R3-F11. Appendix A and §5.3–5.4: the trace exercises one line of the toy, and four ambiguous readings pass it. WOUNDING. DOC.
+
+**What the trace exercises:**
+- E is 0 throughout, so T stays the zero matrix and U, outer() and T×z are never exercised.
+- D is the identity.
+- Every value stays within ±512, so no clip or saturation edge is hit.
+- There are no holds, encounters, crossings, candidates, oscillations or UNKNOWN cases.
+- I, H, L, A and the hashes are not listed.
+
+What it does test is `z += round_even((P₀ − z)/8)`, including three exact .5 ties: two positive (rows 2 and 3) and one negative (row 6). That catches the rounding mode: half-away and trunc fail at row 2, floor at row 3 (EXP2).
+
+**Readings that pass the trace but diverge elsewhere:**
+
+| # | Ambiguity | Divergence |
+|---|---|---|
+| A2 | Saturate after every add, or only at the final clip | P = 1024, E = 1024, T₀₀ = −1024, z = 1024 gives M_x = 0 vs 1024 (EXP6) |
+| A3 | Is M − z saturated before /8? | z = −1000, M = 1024 gives x_after = −747 vs −872 (EXP6) |
+| A5 | outer()/8: round twice ("round each product") or once | DE = 100, z = 45 gives T₀₀ = 0 vs 1 (EXP9) |
+| A6 | M computed from T or T_next | Same 10-encounter stream differs at step 9 (EXP5) |
+
+**Classifier gaps (§5.6):**
+- A9: a real crossing through exactly 0 (−5, 0, 5) is classified UNKNOWN twice and never becomes a candidate.
+- A10: x = 0 inside the confirmation window is unspecified.
+- A11: the return leg of an oscillation (+5 → −3 → −4 → −6) satisfies the literal rule and becomes a CONFIRMED crossing back, so one oscillation yields one OSCILLATION plus one CONFIRMED.
+- A12 is R3-F9.
+
+**Failure scenario:** implementers I and II both pass Appendix A. Under the first real encounter stream with saturation, T diverges by one unit, and the divergence compounds through T×z. Their crossing logs and J_F differ, and the conductor's "match all ten trace steps" gate has certified both.
+
+**Minimal fix:**
+- Add golden vectors that hit each ambiguity: a saturating M sum, a saturating M − z, a nonzero outer() with a rounding tie, real encounters with T ≠ 0, the 0/1/15-hold and NONE cases already promised in §5.7, the default-z₀ crossing, a through-zero case, a zero-in-window case and an oscillation.
+- List T, I and E-before/after as columns.
+- State the bounded set explicitly: z, E, M and T bounded; intermediate sums saturating or not; M − z saturating or not.
+- Define the classifier's handling of zeros inside the window and of return legs.
+
+#### R3-F12. §5.2: "canonical key order" in CBOR has two published meanings, and field IDs and tags are not given. MINOR, because the doc already marks H4 BLOCKED. PRIOR (RFC 8949 §4.2.1 vs RFC 7049 §3.9 and RFC 8949 §4.2.3).
+
+**The problem:** RFC 8949 core deterministic encoding sorts map keys by the bytewise order of their encodings. The older RFC 7049 canonical form, which RFC 8949 keeps as "length-first", sorts shorter keys first. §5.2 allows signed integers. With integer keys such as 24 (encoded 0x18 0x18) and −1 (encoded 0x20):
+- bytewise order puts 24 before −1;
+- length-first order puts −1 before 24.
+
+**Failure scenario:** two verifiers following "canonical key order" compute different bytes, and so different base_state_hash values, for the same state. Every Permit is refused by one of them. Field IDs, domain-tag strings and the version are also absent, so nobody can produce the bytes yet.
+
+**Minimal fix:**
+- Name RFC 8949 §4.2.1 core deterministic encoding.
+- Restrict keys to unsigned 0..23.
+- Publish the field-ID table, the exact tag strings and three test vectors.
+
+### 2e. H1–H4 (§6): can each pass or fail for the right reasons?
+
+**H1.** Our R2-F4 is CLOSED as stated: the replay branch is deleted and replay is only an upper bound. H1 can now fail honestly. It can also pass for the wrong reason (R3-F15).
+
+#### R3-F15. §6 H1 and E1: the target generator and the conventional baseline's update rule are free choices. WOUNDING. DOC.
+
+**What H1 requires:** that T beat "an equally sized conventional state representation" on targets "generated independently of the T reference model".
+
+**What it leaves open:**
+- "Independently" forbids reusing the T rule. It doesn't forbid a target generator with the same bilinear form (an outer product of evidence and state).
+- It doesn't say what update rule the conventional state uses.
+- "Equally sized" has no units. Is it 4 integers for T alone, or 8 for T plus z and E?
+
+**Failure scenario:** the preregistered target is a bilinear function of past E and z, and the baseline is "most recent E, padded to 4 numbers". T wins by matching the target's form, not by any relational property.
+
+**Minimal fix:**
+- Fix the baseline set: at least a running mean of E, an exponential trace of E, and a linear recurrent state of the same integer count, each with its own tuned step size.
+- Size the arms in stored bits, including z and E for every arm.
+- Require the target family to be preregistered by someone other than the designer, with at least one non-bilinear family.
+
+**H2.**
+
+#### R3-F16. §5.3 vs §6 H2 and E2: in the reference toy, the only possible family signal is experimenter-chosen encounters. WOUNDING. DOC.
+
+**The problem:** D is fixed to the identity for every organism, P₀ is shared, J has no path into Φ (R3-F5), and the E2 perturbation field doesn't exist in Ω (A-F5 above).
+
+**Failure scenario:** in the toy, two families can differ only in their encounter streams. Those are environment chosen by the experimenter. If H2 passes in the toy, it detects the experimenter's assignment of streams, which is exactly what "seed-only" and "D-only" controls can't rule out, because those arms are identical by construction.
+
+**Minimal fix:** add per-family D (inside the BA bounds), the perturbation field in Ω with a stated distribution, and the J term. Or state that H2 is not scorable in the reference toy.
+
+**H3.** Our R2-F14 is RELABELED, not fixed: J_F exists but nothing reads it (R3-F5). R3-F2 means the strict reading never writes it.
+
+#### R3-F17. §6 H3 and H4: both depend on the pending gate-opening rule, but neither is marked BLOCKED. MINOR. DOC.
+
+**The dependence:** H3's treatment requires "gate-written J_F". Until the gate-opening rule exists, A₀ = REFUSE and no deposit is ever authorized, so J_F is empty and the treatment arm equals the J-empty control. H4's crossing-deposit clauses likewise have nothing to check.
+
+**Failure scenario:** a run before the grace round reports H3 FAIL, and that verdict gets cited later.
+
+**Minimal fix:** mark H3, and H4's J_F clauses, BLOCKED (GRACE DEFINITION), as §5.2 already does for the encoder.
+
+**H4.** It can fail for the right reasons: a single effect fails, and liveness is reported separately. It can't yet pass, because the encoder is BLOCKED. Under the declared malicious-witness model, a pass at 2-of-3 would be a pass for the wrong reason (R3-F1).
+
+---
+
+## Task 3. Anything else
+
+#### R3-F18. §11 vs text: several ACCEPTs claim more than the text delivers. MINOR. DOC.
+
+| Disposition | Claim | Problem |
+|---|---|---|
+| A-F18 | "seed-matched" | Not in E2 |
+| B-R2-F14 | "developed intergenerational ground" | Nothing reads it (R3-F5) |
+| A-F12 | "define Q/W/I/B/A/L/H… rules" | H/L bytes and A's gate transition are undefined |
+| B-R2-F10 | "one-fault liveness" | True for silent faults only. §2.4's malicious-witness claim is not covered (R3-F1) |
+
+**Failure scenario:** the conductor reads §11 as a checklist and closes items the text didn't fix.
+
+**Minimal fix:** every §11 line should cite the exact sentence that closes it, or say PARTLY.
+
+#### R3-F19. §4: notation collisions. MINOR. DOC.
+
+**The collisions:**
+- M (the toy interpretation) and Mᵍ (descent) share a letter.
+- Member(i, F, t) keeps "t" for a registry anchor, and §4 has to say the interface must reject a learning step.
+- "q" (scale) and Q (uncertainty) differ only by case.
+- §5.6 uses "x_t" without saying whether it is the before or after value at step t.
+
+**Failure scenario:** an implementer passes a learning step into Member, which the type system can't catch if both are integers.
+
+**Minimal fix:** rename to Desc for descent, Member(i, F, r_anchor), and scale_q, and give anchors a distinct integer type in the interface.
+
+---
+
+## Findings summary
+
+| ID | Section | Severity | Tag |
+|---|---|---|---|
+| R3-F1 | §2.4 quorums | FATAL (H4 one-fault claim) | PRIOR |
+| R3-F2 | §5.6 / §2.2 | FATAL (J_F write path) | DOC |
+| R3-F3 | §5.5–5.6 / §2.2 | WOUNDING | DOC |
+| R3-F4 | §3.3 / E5 | WOUNDING | DOC |
+| R3-F5 | §5.4 / §5.1 / H3 | FATAL (H3) | DOC |
+| R3-F6 | §1.3 / §1.5 | WOUNDING | DOC |
+| R3-F7 | §1.2–1.3 / §5.1 | WOUNDING | DOC |
+| R3-F8 | §5.6 / §2.8 | WOUNDING | DOC |
+| R3-F9 | §5.6 / §1.5 | WOUNDING | DOC |
+| R3-F10 | §5.3–5.6 | WOUNDING | DOC |
+| R3-F11 | App. A / §5.3–5.4 | WOUNDING | DOC |
+| R3-F12 | §5.2 | MINOR | PRIOR |
+| R3-F13 | §2.1 / §2.4 | WOUNDING | DOC |
+| R3-F14 | §2.6 | WOUNDING | DOC |
+| R3-F15 | H1 / E1 | WOUNDING | DOC |
+| R3-F16 | H2 / §5.3 | WOUNDING | DOC |
+| R3-F17 | H3 / H4 | MINOR | DOC |
+| R3-F18 | §11 | MINOR | DOC |
+| R3-F19 | §4 | MINOR | DOC |
+| R3-F20 | §3.3 / §3.5 | MINOR | DOC |
+
+**Totals:** 3 FATAL, 12 WOUNDING, 5 MINOR.
+
+## The single finding to fix first
+
+**R3-F5.** Rule 1, lineage ground J_F, is v0.6's main new mechanism and the stated repair of our R2-F14. In the reference toy it has no causal path at all, and its deposit has no schema. Until δ_F is defined and the toy Φ reads it, H3 can only fail, and for the wrong reason. The J-empty and J-shuffled controls are meaningless, and the R3-F2 and R3-F8 sequencing questions can't even be tested.
+
+The fix is small: a closed δ_F record, one bounded J term in the toy Φ, and one golden vector with a nonempty J_F.
+
+R3-F1 comes next (n = 4 or drop "malicious"), then R3-F2.
+
+## Blue-sky idea (unscored, excluded from findings)
+
+**Inherited ground with a sunset.** Give every J_F deposit a generation half-life. A descendant inherits it at reduced weight unless the descendant crosses the same way itself, which renews it through its own gate.
+
+This would do three things:
+- **Turns H3 into a dose-response test.** Instead of comparing J-present with J-empty, you predict how a deposit's effect should fade with generational distance, which is harder to fake.
+- **Limits error propagation.** An uncorrected error fades without anyone having to rewrite history, which eases R3-F7.
+- **Matches the paper's frame.** A tradition that each generation re-earns differs from a decree passed down. The renewal rate becomes a measurable property of a family: whether its children keep walking the same crossings.
+
+It doesn't touch the pending grace definition, because the gate still decides each renewal.
+
+---
+
+**PRIOR claims** (R3-F1, R3-F12) rest on published distributed-systems and CBOR standards that I recalled from memory. I did not re-read them this round, so they should be checked before citation.
+===== END FALSIFIER B =====

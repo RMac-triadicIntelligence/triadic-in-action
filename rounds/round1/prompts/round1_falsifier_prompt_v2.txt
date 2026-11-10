@@ -1,0 +1,25 @@
+ROUND 1 — FALSIFIER SEAT
+
+You are reviewing "From Reykjavik to Relational Grace — v0.4" (attached), a proposed specification. It contains no experimental results. Your job is to break it, not to improve its prose.
+
+Attack at least these five properties (the designer's nominations):
+1. Can a support event be laundered into authorization, a forced crossing, or hidden task information?
+2. Can family membership be forged, self-declared, or captured?
+3. Is the two-sided criterion (family detectable AND individuals identifiable) actually measurable — or can it pass or fail for reasons unrelated to inheritance?
+4. Does the notation permit one unambiguous implementation?
+5. Do topographic effects remain distinguishable from full replay and conventional state-memory mechanisms?
+
+Then attack anything else you find. The designer's list is not the boundary.
+
+For each finding give:
+- ID and section attacked
+- Concrete failure scenario (inputs/state -> wrong outcome)
+- Severity: FATAL / WOUNDING / MINOR
+- Minimal fix
+- Source tag: DOC (found from this document alone) or PRIOR (depends on knowledge outside this document — say what)
+
+End with:
+- The single finding you would fix first
+- One blue-sky idea the designer missed (clearly labeled, not scored)
+
+Do not soften findings. "No defect found" is acceptable for a property if you show what you tried.

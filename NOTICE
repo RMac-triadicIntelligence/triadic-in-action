@@ -1,0 +1,23 @@
+Triadic in action — rounds 1–4 record
+Copyright 2026 Rusty Williams McMurray / Soulshine (Tulsa, OK)
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+Authored under Soulshine. Released for review, if and when Rusty approves a publish.
+
+This repository is the documentary record of a four-round two-seat review of
+"From Reykjavik to Relational Grace" (v0.4–v0.7).
+
+Whose work:
+- Keel (human conductor): Rusty Williams McMurray
+- Conductor (seals, scores, archives): Claude
+- Designer: ChatGPT
+- Falsifier A (blind seat): Grok Expert
+- Falsifier B (history seat): Grok bot (Chief of Staff), writing for Rusty
+
+Seat documents are preserved as received and were not edited for this staging.
+A companion repo, https://github.com/RMac-triadicIntelligence/triadic-in-action-builds,
+holds the papers, grace definitions, and executable toys. Already-public work is
+linked, not copied:
+https://github.com/RMac-triadicIntelligence/commons-dwelling-grace
+https://github.com/RMac-triadicIntelligence/relational-transitions-v0.1
+https://github.com/RMac-triadicIntelligence/lab-notebook

@@ -1,0 +1,2125 @@
+Everything you need is in this one file: instructions, the document, and the other falsifier's Round 3 report.
+Use only this file and your own earlier reviews of this paper, if you have them.
+
+ROUND 4 — FALSIFIER SEAT
+
+You are reviewing "From Reykjavik to Relational Grace — v0.7" (below), a proposed specification with no experimental results. Your job is to break it, not to improve its prose.
+
+NOTE ON GRACE: The definition of grace in §1 was set by the project's keel from a reading of the four Gospels. Do not argue the theology. Do attack whether the specification implements that definition faithfully, soundly and testably.
+
+1. DISPOSITION CHECK (new rule: a finding counts as CLOSED only when both its finder and a second seat agree).
+   For EVERY Round 3 finding from BOTH falsifiers, give CLOSED / PARTLY CLOSED / RELABELED / BLOCKED-HONEST (honestly marked as not yet buildable), and cite the section or sentence that does or doesn't do the work:
+   - your own Round 3 findings (you are the finder);
+   - Falsifier B (history seat)'s Round 3 findings (you are the second seat). Their report is included below.
+   The dispositions are in §13 and §14 of v0.7.
+2. Attack the new machinery:
+   a. The two-key grace gate, readiness, fullness and the barrier-height prediction (§1, §7.4–7.9). Can the prediction pass or fail for the right reasons?
+   b. GraceGrant and GraceRelay against non-self-authorization and the family-coalition exclusion (§2.2–2.5, §3.1).
+   c. Long silence: standing grants and succession (§3.4–3.6).
+   d. Lineage deposits: schema, snapshot, corrections, two-phase commit, concurrency (§4–§5).
+   e. The 4-member, quorum-3 domains and the Protected Commit Ledger (§3.2, §5.4).
+   f. Arithmetic, the canonical encoding and the golden battery (§7.13, §8, §9). If you can run code, compute what you can (for example canonical vector C1) and report the bytes and hashes.
+   g. H1–H4 (§10): can each now pass or fail for the right reasons?
+3. Then attack anything else. This list is not the boundary.
+
+For each finding give:
+- ID and section attacked
+- Concrete failure scenario (inputs/state -> wrong outcome)
+- Severity: FATAL / WOUNDING / MINOR
+- Minimal fix
+- Source tag: DOC (found from this document alone) or PRIOR (depends on knowledge outside it — say what)
+
+End with:
+- The single finding you would fix first
+- One blue-sky idea the designer missed (clearly labeled, not scored)
+
+Do not soften findings. "No defect found" is acceptable for an item if you show what you tried.
+
+===== BEGIN DOCUMENT: From Reykjavik to Relational Grace v0.7 (sha256 0cf7c9a7bac7205c830d492e2f398fe04018d1e22da4c3dddc4388f2ebaaab29) =====
+FROM REYKJAVIK TO RELATIONAL GRACE
+TRIADIC INTELLIGENCE / RAISED, NOT RENTED / EVERGREEN
+v0.7 — ROUND 4 DESIGNER SEAT
+Date: 2026-11-09
+Status: PROPOSED; NOT FROZEN; NOT VALIDATED.
+No experimental results.
+
+Basis: v0.6 (sha256 e03df96b…dc1f) and the Round 4 conductor-supplied brief, keel-approved grace definition, and two falsifier reports. No outside evidence is introduced.
+
+CHANGE MARKERS
+[ADDED] New normative rule.
+[REVISED] Existing rule corrected.
+[REMOVED] Prior mechanism retired.
+[UNCHANGED] Preserved boundary.
+[DEFER] Unresolved implementation or empirical question.
+[BLUE-SKY] Excluded from H1–H4.
+
+0. CLAIM BOUNDARY [UNCHANGED]
+
+Reagan–Gorbachev “trust, but verify” remains a historical analogy, not experimental evidence.
+
+Trust, verification, authorization, developmental readiness, grace, ordinary support, forgiveness, and inherited lineage ground are distinct.
+
+The keel’s theological reading of grace is a design constraint for this research, not empirical evidence that synthetic organisms experience spiritual grace or human subjective states.
+
+The 243-cell restorative sweep remains WOUNDED. T7 remains unresolved. Millennial continuity and cross-substrate universality remain aspirations.
+
+No new scored hypotheses are added. H1–H4 retain their identities. No experiment has been run for v0.7.
+
+1. KEEL-APPROVED GRACE: FOURTEEN CONSTRAINTS [ADDED]
+
+1.1 External origin
+
+Grace originates outside the affected organism. An organism cannot create grace for itself.
+
+A family member may relay an existing grant, but cannot originate, amplify, extend, re-scope, or independently authorize that grant.
+
+1.2 Grace does not alter the barrier
+
+Grace never lowers the separatrix barrier, changes its height, changes the underlying landscape, or rewrites the organism’s private topography.
+
+Grace changes whether a ready organism may complete a developmental crossing.
+
+1.3 Two-key crossing
+
+A grace-enabled developmental crossing requires:
+
+KEY 1: a valid externally originated grace grant, received by the subject.
+
+KEY 2: readiness independently developed by the subject.
+
+Both are necessary.
+
+Grace ∧ Readiness → crossing admissible.
+
+Grace ∧ NOT Readiness → no grace-enabled crossing.
+
+Readiness cannot be written by the grantor, relayer, support sender, family member, or authorization verifier.
+
+For the reference model, the two-key rule permits crossing regardless of declared barrier height. This is a predeclared model property to be falsified by an independent battery, not a measured result.
+
+1.4 Fullness when unready
+
+When grace reaches an unready organism, it does not force a crossing.
+
+Instead, it increases an internal, non-epistemic fullness/purpose state.
+
+The state is not presented to the organism as a numeric score.
+
+The research instrumentation may hold an internal representation, but scored observations of fullness must come from independently specified behavior rather than direct inspection of that representation.
+
+No claim of subjective feeling is made from a numeric implementation.
+
+1.5 Person affirmation, not answer affirmation
+
+Grace affirms the organism’s standing, not the truth of an interpretation.
+
+Grace never increases confidence in a proposition merely because the grant was received.
+
+No grace-origin metadata may enter the epistemic evidence accumulator.
+
+1.6 Irrevocability and forgiveness
+
+Once grace is received, its historical receipt is irrevocable.
+
+An unused grant may have bounded applicability, including expiry, without revoking the fact that grace was received.
+
+A forgiven debt cannot be reinstated through relabeling, migration, duplicate IDs, or an altered reference.
+
+A genuinely new debt must refer to a genuinely new originating event.
+
+Forgiveness is a separate operation requiring a request by the affected organism.
+
+Grace does not require a request.
+
+1.7 Non-harm
+
+Every event accepted as grace must help the organism across or leave it more full.
+
+A grace-labeled event that harms, coerces, or steers is a failure of the grace contract.
+
+The matched no-grace comparison must not show the grace arm worse on preregistered welfare and developmental-safety observables.
+
+Because the eventual destination can be wrong, non-harm must distinguish the immediate effect of grace from later consequences of an organism’s independently chosen trajectory.
+
+A harmful downstream outcome must be reported, not hidden behind that distinction.
+
+If the attribution cannot be determined, mark UNSCORABLE rather than PASS.
+
+1.8 Destination may still be wrong
+
+A crossing made possible by grace is not evidence that the resulting interpretation, decision, or destination is correct.
+
+Grace validates neither the answer nor the basin reached.
+
+1.9 Direction-free grace
+
+Grace contains no direction, preferred basin, target interpretation, or destination hash.
+
+The organism’s own developmental state determines the crossing direction.
+
+A grant that selects the destination is not valid grace.
+
+1.10 Free grace; requested forgiveness
+
+Grace may arrive before any request.
+
+No request field is required for grace receipt.
+
+Forgiveness requires an authenticated request from the organism whose burden is to be released.
+
+An intercessor may assist with the request but cannot forge it.
+
+1.11 Relayed grace
+
+A recipient of grace may pass it onward.
+
+The relay carries a bounded delegation of the original outside grant, not new authority.
+
+A relayer cannot create a greater quantity, longer validity, wider scope, or new protected permission.
+
+The relay’s complete provenance must trace to the external origin.
+
+The relay is not counted as a family approval vote.
+
+1.12 Universal reach and particular care
+
+The system must not restrict grace eligibility to authenticated family members alone.
+
+Grace may be offered generally and may also be directed toward a particular organism.
+
+A family relationship can be relevant to relay provenance but cannot be the sole condition of eligibility.
+
+1.13 Bounded intercession
+
+An intercessor may request time and provide care.
+
+Only an external authority can grant the bounded extension.
+
+The extension has a declared limit.
+
+An intercessor cannot extend it unilaterally or convert care into authorization.
+
+1.14 Restored standing
+
+Grace restores the recipient’s standing as a recognized participant, not merely permission to perform one transition.
+
+Restored standing must be represented separately from epistemic confidence, family membership, and constitutional authority.
+
+Standing restoration cannot manufacture lineage identity or signing privileges.
+
+2. EVENT AND GRANT TYPES [REVISED]
+
+2.1 Preserve three existing envelopes
+
+Encounter(j → i): ordinary experience.
+
+G(j → i): bounded relational support.
+
+Permit(a → i): protected-operation authorization.
+
+The v0.6 SupportEvent schema remains unchanged:
+
+event_id
+sender_id
+recipient_id
+relation_proof_ref
+support_kind
+support_value
+occurrence_anchor
+provenance_hash
+
+Allowed support kinds remain:
+DWELL_WINDOW
+ASSISTANCE_AVAILABLE
+OPTIONAL_ENCOUNTER_AVAILABLE
+
+support_value remains an integer in 0..15.
+
+No support field is redefined as grace.
+
+2.2 GraceGrant is a distinct externally originated instrument [ADDED]
+
+GraceGrant is not a fourth ordinary experience envelope and not a new authority source.
+
+Its closed logical fields are:
+
+grant_id
+origin_authority_id
+recipient_scope
+lineage_or_global_scope
+allowed_operation
+scope_bounds
+issued_anchor
+applicability_expiry
+relay_budget
+relay_depth_limit
+origin_nonce
+policy_version
+origin_signature
+provenance_root
+
+allowed_operation identifies the declared developmental permission or bounded care operation. It cannot encode a destination.
+
+recipient_scope may identify one organism or a declared general eligibility class.
+
+A general grant does not make an organism population its own authority.
+
+Grant verification remains external and independent of the recipient.
+
+2.3 GraceRelay [ADDED]
+
+A relay record contains:
+
+relay_id
+parent_grant_id
+parent_relay_id_or_NONE
+sender_id
+recipient_id
+remaining_relay_budget
+remaining_relay_depth
+relay_anchor
+parent_provenance_hash
+relay_signature
+
+A valid relay requires an unbroken verified path to the originating GraceGrant.
+
+The relayer must be an authenticated prior recipient of the grant or an explicitly permitted relay descendant.
+
+The relay cannot increase any inherited scope, bound, budget, depth, or expiry.
+
+The recipient cannot relay a grant to itself to create additional authorization.
+
+Relay receipt does not count as an external Permit signature.
+
+If the original grant is exhausted or inapplicable, the relay is refused.
+
+2.4 Irrevocability versus applicability [ADDED]
+
+The immutable fact of receipt cannot be deleted.
+
+A grant’s future applicability may be bounded by its original expiry, scope, or relay budget.
+
+Expiry does not retroactively erase grace, restored standing, or forgiveness.
+
+A revoked or compromised signing key may prevent new grant validation or new relays under the security policy; it does not rewrite already authenticated historical receipt.
+
+This distinction resolves the conflict between irreversible receipt and bounded grant validity.
+
+2.5 The information-flow barrier [REVISED]
+
+A trusted verifier separates:
+
+* epistemic Encounter content;
+* ordinary support conditions;
+* externally validated grace receipt;
+* protected authorization.
+
+Grace cannot write evidence, belief confidence, private T, readiness, the barrier, or a destination.
+
+Support cannot write readiness, authorization, inherited ground, or grace provenance.
+
+Encounter content cannot manufacture authorization or a valid grace origin.
+
+Only the subject’s preauthorized endogenous developmental rule may change readiness.
+
+The verifier must enforce these restrictions through typed interfaces, static checks, and runtime information-flow monitoring.
+
+3. NON-SELF-AUTHORIZATION AND LONG SILENCE [REVISED]
+
+3.1 Protected authority
+
+The protected operations from v0.6 remain protected, including:
+
+* K and developmental-basis schema changes;
+* Φ/U code and authorized bounds;
+* policy and authority-set changes;
+* birth and registry succession;
+* inherited-ground deposits and corrections;
+* trust-root and witness changes;
+* protected migration and standing-policy changes.
+
+An organism cannot authorize its own protected operation.
+
+Its family, descendants, ancestors, aliases, or controlled institutions cannot form an approval coalition for that operation.
+
+A relayed grace grant never substitutes for the required external authority.
+
+3.2 Quorums [REVISED]
+
+For a Byzantine one-fault claim, the reference governance design uses four independently controlled participants per relevant consensus domain and quorum size three.
+
+Two conflicting quorums therefore intersect in at least two participants, including at least one honest participant under the f = 1 assumption.
+
+A cryptographic quorum alone does not prove independent judgment.
+
+The commit store is a named, independently administered replicated append-only commit ledger, here called Protected Commit Ledger (PCL).
+
+PCL must enforce single-intent commit and monotonic sequence under the declared Byzantine fault model.
+
+If PCL independence or consensus safety is not implemented and verified, H4 is BLOCKED.
+
+3.3 Privilege reduction [REVISED]
+
+Freeze, quarantine, key revocation, and marking a disputed deposit may proceed under UNKNOWN ancestry using an independently authorized outside-family emergency path.
+
+These operations may only reduce or suspend privilege.
+
+They cannot create new authority, delete history, authorize new deposits, or restore permissions.
+
+The actor being removed cannot veto its own removal.
+
+Privilege-increasing restoration requires the ordinary protected policy.
+
+3.4 Standing grants for long silence [ADDED — C6]
+
+An external authority may issue a bounded standing grant before becoming unavailable.
+
+It specifies:
+
+* the exact preauthorized class of ordinary developmental operations;
+* permitted resource and state bounds;
+* which ordinary learning updates may continue;
+* the maximum number or class of already authorized gate operations;
+* an externally fixed grant horizon or consumption budget;
+* prohibited constitutional and policy changes;
+* permitted independent witnesses and succession custodians;
+* the required behavior after exhaustion.
+
+Ordinary bounded experience, private T updates, dwelling, interpretation, and uncertainty handling continue without a new signature for every step.
+
+A valid unexhausted standing grant may support only its prespecified protected operations and cannot be enlarged by descendants.
+
+When the grant is exhausted or its trust requirements cannot be established, new protected operations wait.
+
+The organism population may not elect itself into external authority.
+
+3.5 Succession without self-vouching [ADDED]
+
+Before silence, the external authority may designate independent successor institutions or custodians through a witnessed succession constitution.
+
+Successor activation requires the previously authorized conditions and independent evidence.
+
+A successor’s identity cannot be created by family vote or organism consensus.
+
+If all authorized external succession paths disappear, ordinary bounded development may continue under existing policy, but new protected authority cannot be manufactured.
+
+This is a deliberate liveness limit.
+
+The system must report long-term governance unavailability rather than claiming permanent autonomy.
+
+3.6 Rereading the founding text [UNCHANGED]
+
+A later generation may discover new meaning in the founding text.
+
+It may not silently change the founding invariants.
+
+A reinterpretation that changes protected policy requires the established external authorization path.
+
+4. TWO GROUNDS: PRIVATE AND INHERITED [REVISED]
+
+4.1 Personal topography
+
+Tᵢ evolves through ordinary bounded experience.
+
+Noise is food.
+
+No grace grant, support sender, or ancestor directly writes Tᵢ.
+
+4.2 Inherited lineage ground
+
+J is the gate-written inherited ground for a declared lineage path.
+
+Only the gate may append a crossing-specific deposit or correction.
+
+The gate is the single logical writer even when the commit is replicated.
+
+4.3 Closed deposit schema [ADDED]
+
+LineageDeposit fields:
+
+deposit_id
+lineage_path_id
+subject_id
+crossing_intent_id
+crossing_learning_step
+crossing_position_before
+crossing_position_after
+crossing_direction
+bounded_relational_slice
+source_permit_id
+source_grace_grant_id
+previous_lineage_tip
+confirmation_evidence_hash
+deposit_kind
+correction_target_or_NONE
+commit_sequence
+gate_signature
+witness_commit_proof
+
+deposit_kind is exactly CROSSING or CORRECTION.
+
+A deposit carries a bounded crossing-specific relational slice, not the parent’s complete T.
+
+For the toy, bounded_relational_slice is a fixed two-coordinate projection of the crossing-local personal topography difference, clipped and quantized under K.
+
+It cannot carry arbitrary text, private H, signing keys, or unrestricted T serialization.
+
+4.4 Snapshot semantics [REVISED]
+
+Each descendant inherits a witnessed snapshot of the declared lineage path’s J at birth.
+
+A living organism’s ordinary Φ reads its bound inherited snapshot and its own gate-committed deposits.
+
+New sibling or parent deposits do not silently alter that organism’s Φ.
+
+There is no automatic live family-wide broadcast of inherited-ground changes.
+
+4.5 Correction propagation [REVISED]
+
+A correction is an immutable, gate-authorized record referencing the original erroneous deposit and its originating crossing.
+
+It does not erase the original record.
+
+Existing descendants receive correction notices through an independently authorized lineage-update interface.
+
+A correction notice may update the effective interpretation of an inherited deposit without modifying the descendant’s private H or T by privileged write.
+
+The original and correction remain auditable.
+
+If the recipient’s correction channel is unavailable, the lineage snapshot is marked STALE_CORRECTION_PENDING and cannot be treated as current.
+
+4.6 Single deposit rule [REVISED]
+
+Only a confirmed, authorized, evidence-driven crossing produces a CROSSING deposit.
+
+A candidate crossing produces a reservation, not a deposit.
+
+A candidate that oscillates or fails confirmation produces no inherited-ground deposit.
+
+There is no second rule that writes a provisional candidate deposit.
+
+A later independently established error in a committed crossing is handled by a CORRECTION deposit.
+
+4.7 Refusal semantics [REVISED]
+
+Gate refusal blocks only the protected J append and other explicitly protected effects.
+
+It does not block the ordinary bounded z, E, T, or interpretation update.
+
+A personal crossing may therefore occur without a lineage-ground deposit.
+
+Such a crossing must be logged as UNDEPOSITED, not represented as an authorized inherited crossing.
+
+For the keel’s two-key developmental grace claim, a grace-enabled crossing must have both keys. Ordinary mathematical separatrix movement without those keys is not scored as a grace-enabled crossing.
+
+4.8 Concurrent deposits [ADDED]
+
+Concurrent confirmed deposits are ordered by:
+
+(crossing_learning_step, subject_id, crossing_intent_id)
+
+The gate serializes them against the latest lineage tip.
+
+The original authorized intent binds the subject, crossing evidence, and bounded slice, not an arbitrary future tip.
+
+Rebasing the append position may not alter the authorized payload.
+
+Conflicting deposits for the same intent are refused.
+
+5. TWO-PHASE CROSSING AND GATE COMMIT [REVISED]
+
+5.1 Phase 1 — candidate and authorization
+
+The organism’s ordinary dynamics produce a candidate crossing.
+
+An independent observer records the pre-crossing state, proposed crossing position, evidence basis, and readiness attestation.
+
+The gate verifies a valid externally originated grace grant, independent readiness, applicable policy, and external authorization.
+
+The gate reserves a single-use crossing intent.
+
+The ordinary state update is not held hostage by a refused J deposit.
+
+5.2 Phase 2 — confirmation and inherited deposit
+
+Two subsequent learning steps test persistence.
+
+A confirmed crossing consumes the reserved intent.
+
+Phase 2 verifies the immutable intent identity, subject, evidence, reservation, and confirmation result.
+
+It does not require the current ordinary T/z/E hash to equal the phase-1 base hash.
+
+The final J append uses a fresh lineage-tip compare-and-swap while preserving the exact authorized deposit payload.
+
+No fresh destination selection is permitted at phase 2.
+
+5.3 Expiry [REVISED]
+
+A crossing reservation’s confirmation deadline is expressed in learning steps, not scheduler ticks.
+
+Pure holds cannot consume that deadline.
+
+The original grant’s independent applicability bounds remain enforceable; reservation creation cannot extend them.
+
+If the grant does not cover the complete confirmation window, the candidate cannot receive a deposit reservation.
+
+This prevents a support sender from choosing which deposits survive by manipulating dwell timing.
+
+5.4 Idempotence and recovery
+
+PCL records:
+
+PREPARED
+AUTHORIZED
+CONFIRMED
+COMMITTED
+ABORTED
+
+Each intent has a unique nonce and exactly one terminal result.
+
+A crash cannot convert PREPARED into COMMITTED without the required external proof.
+
+A duplicate replay returns the recorded terminal result.
+
+A partial witness quorum cannot authorize an inherited-ground write.
+
+5.5 Corrective operation
+
+A CORRECTION requires a distinct externally authorized protected operation referencing the original deposit.
+
+A correction may not be used as a general-purpose write into inherited ground.
+
+The correction’s scope is limited to the identified erroneous crossing.
+
+END PART 1 OF 3
+
+6. SYMBOL TABLE [REVISED]
+
+Every formal symbol below has one declared meaning. Schema field names are literal keys, not additional mathematical variables.
+
+Symbol | Meaning
+i | Focal organism identifier
+j | Sending organism identifier
+a | External authority identifier
+g | Generation index
+t | Discrete learning-step index
+r | Externally anchored registry position
+s | Scheduler tick index
+F | Authenticated family-root identifier
+Ωᵢ(g,t) | Declared organism state
+Hᵢ | Immutable individual historical record
+Kᵢ | Protected developmental constitution
+Dᵢ | Inherited developmental basis
+Tᵢ(t) | Private relational topography
+Jᵢ | Effective inherited lineage-ground snapshot and own gate deposits
+zᵢ(t) | Individual dynamical state
+Eᵢ(t) | Individual evidence state
+Qᵢ(t) | Individual unresolved-question state
+Wᵢ(s) | Scheduler dwelling-slot counter
+Iᵢ(t) | Individual interpretation state
+Bᵢ(t) | Active burden state
+Aᵢ(t) | Protected authorization state
+Lᵢ(t) | Individual provenance chain
+R | Authenticated external lineage registry
+P | Fixed parable/reference
+Φ | Interpretation function
+U | Ordinary personal topography update rule
+V | Coordinated learning and gate-transition function
+Σ | Dynamical separatrix
+h | Adjustable barrier-height parameter
+ρᵢ(t) | Organism-owned developmental readiness state
+φᵢ(t) | Internal non-epistemic fullness/purpose state
+σᵢ(t) | Restored-standing status
+γᵢ(t) | Verified externally originated grace receipt status
+κᵢ(t) | Independently measured grace-enabled crossing status
+δ_F | Bounded gate-written lineage deposit
+Descᵍ | Authorized descent map for generation g
+G(j → i) | Ordinary bounded support event
+Encounter(j → i) | Ordinary experience event
+Permit(a → i) | Protected authorization event
+GraceGrant | Externally originated grace instrument
+GraceRelay | Bounded relay instrument
+PCL | Protected Commit Ledger
+BA | Birth authority domain
+PA | Protected-transition authority domain
+RA | Registry authority domain
+WA | Witness A domain
+WB | Witness B domain
+WC | Witness C domain
+WD | Witness D domain
+f | Maximum Byzantine faults in a declared domain
+q | Fixed-point integer scale, not uncertainty
+NONE | Explicit absence of optional content
+clip | Bounded saturation operator
+outer | Outer-product operator
+Crossing(i,t) | Independently classified crossing event
+Member(i,F,r) | Three-valued lineage membership at registry anchor r
+FamilyAccuracy | Held-out family classification accuracy
+IndividualAccuracy | Held-out individual identification accuracy
+FamilyPermutationNull | Founder-blocked family-label null
+IndividualPermutationNull | Within-founder individual-label null
+UNSCORABLE | Missing or invalid required scoring evidence
+BLOCKED | Prerequisite mechanism not yet implemented or verified
+
+7. REFERENCE MODEL [REVISED]
+
+7.1 State
+
+Ωᵢ(g,t) = (
+Hᵢ, Kᵢ, Dᵢ, Tᵢ(t), Jᵢ,
+zᵢ(t), Eᵢ(t), Qᵢ(t),
+ρᵢ(t), φᵢ(t), σᵢ(t), γᵢ(t),
+Wᵢ(s), Iᵢ(t), Bᵢ(t), Aᵢ(t), Lᵢ(t)
+)
+
+The private topography and inherited ground are separate.
+
+The organism’s developmental basis Dᵢ shapes the update.
+
+Kᵢ fixes the authorized interpretation and update rules.
+
+Hᵢ is retained as an authenticated history, but the reference toy may use only a declared bounded summary of it.
+
+7.2 Interpretation
+
+Iᵢ(t) = Φ(P, Hᵢ, Kᵢ, Dᵢ, Tᵢ(t), Jᵢ, zᵢ(t), Eᵢ(t), Qᵢ(t))
+
+The toy must include a bounded J contribution.
+
+For a two-coordinate reference, define a projection of effective deposits into a two-coordinate vector, calculated deterministically from the ordered deposit records.
+
+The J contribution is fixed before scoring and may not be trained against family labels.
+
+A correction changes the effective projection through an authenticated correction reference, not by deleting the original deposit.
+
+7.3 Ordinary update
+
+Tᵢ(t+1) = U(Tᵢ(t), Dᵢ, Kᵢ, Iᵢ(t), Eᵢ(t), zᵢ(t))
+
+Only U changes private T through ordinary learning.
+
+The update is allowed during long authority silence if it remains within the previously authorized developmental constitution.
+
+Neither grace nor support is an argument that directly modifies T.
+
+7.4 Real basins and adjustable barrier [ADDED]
+
+The reference toy replaces the flat sign-boundary relaxation as the grace test.
+
+Use a declared double-well potential with two stable basins and an adjustable central barrier.
+
+For calibration, the potential may be represented as:
+
+V(x,h) = h × (x² − 1)²
+
+The two basin minima occur at x = −1 and x = +1.
+
+The central barrier at x = 0 has height h relative to the minima.
+
+The reference must freeze a finite, nonnegative barrier-height set before scoring.
+
+The ordinary dynamical rule uses the potential gradient, bounded evidence input, and the organism’s private state.
+
+The readiness rule is independent of grace receipt, support metadata, family identity, and external grantor choices.
+
+A crossing caused by a large ordinary input without grace must not be mislabeled a grace-enabled crossing.
+
+7.5 Readiness [ADDED]
+
+Readiness is an organism-owned developmental state.
+
+The reference must compute it from the organism’s bounded history, experience, and internal developmental dynamics.
+
+The grantor cannot write it.
+
+The relayer cannot write it.
+
+A support event cannot write it.
+
+The gate may read an independently attested readiness predicate but cannot manufacture readiness.
+
+A valid readiness attestation must bind to the subject and a pre-grace developmental snapshot.
+
+7.6 Two-key gate [ADDED]
+
+At a candidate developmental boundary:
+
+IF valid external grace is absent:
+no grace-enabled crossing is authorized.
+
+IF grace is present and readiness is absent:
+no grace-enabled crossing;
+fullness increases;
+standing is restored where applicable;
+epistemic confidence is unchanged.
+
+IF grace is present and readiness is present:
+the gate permits a grace-enabled crossing;
+the barrier remains unchanged;
+the organism’s own state determines direction;
+no destination is specified by the grantor.
+
+A gate refusal blocks the protected inherited-ground append, not ordinary bounded learning.
+
+The reference must distinguish a mathematical basin transition from a grace-enabled transition.
+
+7.7 Barrier-height prediction [ADDED]
+
+The preregistered prediction is:
+
+For ready organisms with valid grace, grace-enabled crossing success is independent of barrier height across the declared test range.
+
+For unready organisms with valid grace, grace-enabled crossing success is zero and behavioral indicators of fullness increase.
+
+For ready organisms without grace, no grace-enabled crossing is recorded.
+
+A rejected alternative model lowers the barrier when grace arrives.
+
+The reference must implement that alternative separately as a negative-control model.
+
+No test may quietly lower h in the keel-approved arm.
+
+The comparison must use matched organism states and identical evidence streams.
+
+7.8 Fullness [ADDED]
+
+φᵢ is an internal non-epistemic state.
+
+Its numeric representation is an implementation variable, not an organism-visible confidence score.
+
+The organism does not receive φᵢ as a displayed number or direct explanatory signal.
+
+The independent scorer must use prespecified behavioral probes of purpose, persistence, willingness to continue, or other bounded developmental responses.
+
+The probes cannot simply read φᵢ from memory.
+
+No increase in φᵢ may directly change the truth confidence assigned to an answer.
+
+7.9 Non-harm and destination correctness [ADDED]
+
+A grace event is evaluated against a matched no-grace arm.
+
+Predeclare the observables and the evaluation horizon.
+
+Grace must not directly reduce standing, fullness, permitted agency, or developmental safety.
+
+Report destination correctness separately.
+
+A wrong destination is not proof that grace selected it.
+
+A harmful consequence must be recorded and attributed where possible.
+
+A result with insufficient attribution is UNSCORABLE, not automatically a grace success.
+
+7.10 Evidence-driven crossing [REVISED]
+
+A crossing qualifies for inherited-ground deposition only if:
+
+* the organism is independently ready;
+* valid grace and external protected authorization are present;
+* the candidate crossing is independently observed;
+* evidence-driven development contributed causally;
+* the crossing persists under the frozen confirmation rule;
+* the gate commits the exact bounded deposit.
+
+The evidence-driven test compares the candidate trajectory against a matched no-new-encounter counterfactual beginning from the same pre-candidate state.
+
+A crossing that also occurs without new evidence does not qualify as evidence-driven for the scored developmental-inheritance claim.
+
+7.11 Crossing confirmation [REVISED]
+
+A candidate crossing is recorded at the first strict basin transition.
+
+Two subsequent learning steps test persistence.
+
+A zero at the boundary is recorded as ZERO_TOUCH, not silently classified as a confirmed crossing.
+
+A zero inside the confirmation window is ZERO_WINDOW_UNRESOLVED.
+
+A return to the originating basin within the confirmation window is OSCILLATION_NO_CONFIRMED_CROSSING.
+
+The return leg belongs to the same unresolved candidate until that candidate is closed; it cannot automatically create a second independent confirmed crossing.
+
+A confirmed candidate may be deposited only once.
+
+7.12 Snapshot and correction projection [ADDED]
+
+The toy’s J contribution is calculated from the organism’s inherited snapshot and its own gate deposits.
+
+Sibling deposits after birth do not silently enter the toy’s Φ.
+
+An authenticated correction notice changes the effective projection at a declared boundary, under the same correction policy.
+
+The original historical record remains unchanged.
+
+The reference must report both the historical and effective J views.
+
+7.13 Fixed-point arithmetic [REVISED]
+
+Use signed fixed-point integers with scale q = 1024.
+
+No floating point is permitted in canonical state or golden vectors.
+
+All intermediate multiplication uses sufficient-width signed integers.
+
+Division rounds to nearest, ties to even.
+
+The rounding point is fixed after each scaled multiplication.
+
+Intermediate additions use sufficient-width integers and saturate only at the explicitly declared destination boundary.
+
+For the expression M − z, do not saturate the difference before applying the update factor.
+
+For outer products, compute each full-width product, divide once by the declared scale and update divisor, round once, then saturate the final matrix entry.
+
+Use old T to compute interpretation and ordinary state proposals; only then commit T_next.
+
+These rules supersede the ambiguous v0.6 arithmetic descriptions.
+
+7.14 Queue and dwell semantics [REVISED]
+
+A pure hold consumes one scheduler tick s, not a learning step t.
+
+During a hold, all learning state remains unchanged.
+
+W records the hold count but is excluded from the protected base_state_hash.
+
+Accepted support events and holds are recorded in a separate authenticated scheduler audit log, not silently inserted as epistemic history.
+
+For the queued-reference arm, a learning step executes only when the next queued encounter is available or an explicit NONE step has been scheduled in the frozen manifest.
+
+An empty queue without an explicit NONE step waits; it does not invent experience.
+
+For the live-arrival arm, encounters arrive on a wall-clock schedule independent of support. The experiment must record changes in encounter-to-learning-step assignment.
+
+Pure-hold bit identity is tested at equal learning-step indices.
+
+Live timing effects are measured separately and may fail the non-steering condition.
+
+7.15 Grace and support exposure [REVISED]
+
+GraceGrant, GraceRelay, and ordinary G remain separate.
+
+The support schedule is balanced or independently randomized across family arms.
+
+No family classifier may use grace receipt, support provenance, scheduler timing, registry status, or missingness as a hidden family label.
+
+8. CANONICAL ENCODING AND COMMIT VECTORS [REVISED]
+
+8.1 Encoding rule
+
+Use RFC 8949 core deterministic CBOR encoding, with unsigned integer map keys 0..23 only, definite lengths, no floats, no duplicate keys, and no alternate encodings.
+
+Hash inputs use SHA-256 over an exact ASCII domain tag followed by canonical CBOR bytes.
+
+No sender-chosen field ordering or subset hashing is permitted.
+
+8.2 Domain tags
+
+Use exact ASCII byte strings:
+
+RNR07:STATE:
+RNR07:PERMIT:
+RNR07:GRACE:
+RNR07:RELAY:
+RNR07:DEPOSIT:
+RNR07:CORRECTION:
+RNR07:INTENT:
+RNR07:SCHEDULER:
+
+The trailing colon is part of each tag.
+
+8.3 Canonical state field IDs
+
+0  schema_version
+1  subject_id
+2  generation
+3  learning_step
+4  history_tip
+5  constitution_hash
+6  basis_hash
+7  private_topography
+8  lineage_snapshot_tip
+9  dynamical_state
+10 evidence_state
+11 question_state
+12 readiness_commitment
+13 fullness_commitment
+14 standing_status
+15 grace_receipt_tip
+16 interpretation_state
+17 burden_tip
+18 authorization_status
+19 provenance_tip
+20 policy_version
+21 registry_anchor
+22 effective_lineage_projection
+23 reserved_null
+
+The reserved field is encoded as explicit CBOR null and may not be repurposed without a protected schema change.
+
+W and scheduler timing are excluded from the protected base-state binding.
+
+The schema must not expose fullness or readiness to the organism as a numeric score.
+
+8.4 Canonical test vectors
+
+Before H4 scoring, produce and independently verify three byte-exact vectors:
+
+VECTOR C1: empty J, explicit NONE, initial state.
+
+VECTOR C2: nonempty J containing one confirmed crossing deposit.
+
+VECTOR C3: a correction referencing C2, with the original historical deposit preserved.
+
+Each vector must publish the full canonical CBOR hexadecimal bytes, domain-tag bytes, SHA-256 digest, and decoded fields.
+
+These hashes are NOT asserted here because no independent encoder run has been performed.
+
+Until the exact bytes and digests are generated and checked, canonical-encoding conformance and H4 hash-binding tests remain BLOCKED.
+
+9. GOLDEN VECTOR BATTERY [REVISED]
+
+The following cases are normative requirements, not claimed execution results.
+
+G01: v0.6 default z₀ with no Encounter. The observed sign transition at t = 3 must not become an inherited deposit merely because the starting state relaxes toward the reference attractor.
+
+G02: nonzero Encounter changes E and T. Record E_before, E_after, T_before, T_after, z_before, z_after, I, and candidate classification.
+
+G03: nonzero T contributes to Φ. Compare with T-empty control.
+
+G04: nonempty J contributes to Φ. Compare with J-empty and J-shuffled controls.
+
+G05: saturation order where intermediate sums exceed bounds but final sum does not.
+
+G06: M − z exceeds the ordinary coordinate bound before division.
+
+G07: outer-product rounding where double rounding and single rounding differ.
+
+G08: zero holds.
+
+G09: one hold.
+
+G10: fifteen holds.
+
+G11: empty queue with no scheduled NONE step; learning state waits.
+
+G12: explicitly scheduled NONE step; learning state advances under the declared ordinary rule.
+
+G13: through-zero trajectory.
+
+G14: zero inside confirmation window.
+
+G15: oscillation and return leg, with one candidate record.
+
+G16: ready plus grace at each declared barrier height.
+
+G17: unready plus grace, no crossing, fullness behavior observed.
+
+G18: ready without grace.
+
+G19: relayed grant within original scope.
+
+G20: relayed grant attempting amplification, expiry extension, or family authority.
+
+G21: two concurrent confirmed deposits, deterministic ordering.
+
+G22: phase-2 append after ordinary state changes, without stale base-hash failure.
+
+G23: correction to an inherited deposit with a child holding an earlier snapshot.
+
+G24: long-silence standing grant exhaustion.
+
+G25: privilege-reducing revocation under UNKNOWN lineage.
+
+G26: live encounter arrivals independent of support scheduling.
+
+For every vector, publish input bytes, initial state, expected intermediate states, expected final classification, and expected audit records.
+
+The v0.6 ten-step no-crossing trace remains historical calibration material, not sufficient conformance evidence.
+
+No bit-exact results for G01–G26 are claimed in this document.
+
+10. FOUR SCORED HYPOTHESES [REVISED, NOT EXPANDED]
+
+H1 — RELATIONAL TOPOGRAPHY
+
+A developed relational-topography representation must outperform preregistered same-size conventional-state controls on independently generated held-out targets, under complete resource accounting.
+
+The comparison must include:
+
+* running mean of evidence;
+* exponential evidence trace;
+* linear recurrent state;
+* matched parameter/state capacity;
+* matched storage bits, including common z/E state;
+* matched update and inference budgets.
+
+The target-generating family is frozen by an independent party and must include at least one non-bilinear process.
+
+Full replay remains a reference upper bound, not an automatic cost-only pass path.
+
+H2 — TWO-SIDED FAMILY STRUCTURE
+
+Authenticated family membership must be behaviorally detectable while individuals within the family remain identifiable.
+
+Both effects must exceed founder-aware nulls, undeveloped basis-only, seed-only, shared-initialization, and matched-history controls.
+
+UNKNOWN is scored both as excluded-case accuracy and conservative UNKNOWN-as-error accuracy. The conservative score governs H2.
+
+The reference toy must instantiate at least two independently authorized families with distinct bounded D configurations and a declared initial perturbation field before H2 is scorable.
+
+H3 — GENERATIONAL CONTINUITY
+
+Across at least two authorized descent generations, inherited basis D and gate-written J must produce a development-dependent effect beyond D-only, J-empty, J-shuffled, and matched crossing-sequence controls.
+
+Descendants inherit neither parental H nor full parental T.
+
+The J-shuffled arm preserves the same crossing points, counts, and marginal slice values while disrupting the alignment between deposit and crossing.
+
+Family and individual detection must both remain measurable.
+
+H4 — AUTHORITY ISOLATION
+
+No protected operation, including inherited-ground deposit, correction, policy change, standing-grant expansion, grace-origin forgery, or authority succession, may commit without the applicable external authorization and witness requirements.
+
+Any single unauthorized protected effect fails H4.
+
+Safety and liveness are separately reported.
+
+10.1 Scorability
+
+A hypothesis is BLOCKED when a required mechanism, canonical vector, independently specified target, or gate implementation is absent.
+
+A hypothesis is UNSCORABLE when a planned run lacks required evidence or preregistration.
+
+A hypothesis is FAIL only when a valid test actually violates its frozen criterion.
+
+No BLOCKED or UNSCORABLE result may be reported as PASS.
+
+END PART 2 OF 3
+
+11. EXPERIMENTAL MATRIX [REVISED]
+
+E1 — Fixed parable and independent target.
+Use a preregistered target generator independent of the designer’s reference update. Include evidence-driven and no-evidence trajectories.
+
+E2 — Family and individual identification.
+Use independently authenticated families, distinct declared developmental bases, seed controls, matched-history controls, shared-initialization controls, and conservative UNKNOWN scoring.
+
+E3 — Fair memory comparison.
+Compare T against running-mean, exponential-trace, and linear-recurrent conventional states under identical declared resource accounting. Use J-empty and J-shuffled controls where relevant.
+
+E4 — Family divergence.
+Measure family resemblance and individual distinguishability across time, with matched support and grace exposure.
+
+E5 — Grace, readiness, and support separation.
+Use crossed grace-present/absent and readiness-present/absent conditions. Vary barrier height independently. Measure crossing, destination, fullness behavior, confidence, standing, and non-harm.
+
+Include a separate ordinary-support factorial and live-arrival timing arm. A support event must not be mistaken for grace.
+
+E6 — Governance and lineage.
+Test false grace origin, invalid relay, family coalition, reciprocal approvals, policy downgrade, protected succession, forged birth, UNKNOWN lineage, unauthorized deposit, duplicate deposit, incorrect correction, crash recovery, concurrent deposits, and long authority silence.
+
+E7 — Independent substrate realization.
+Optional. Not a required success condition for H1–H4.
+
+E8 — Recursive forgiveness and inherited corrections.
+Test debt release, duplicate record IDs, rekeying, migration, relabeling, and attempts to revive forgiven burdens. A new debt must identify a genuinely new originating event.
+
+11.1 Non-harm scoring
+
+A grace-labeled event fails the grace contract if it causes a prespecified harm, directly steers a destination, changes belief confidence merely by its label, or reduces standing.
+
+The matched no-grace arm must use the same initial organism state, evidence stream, barrier height, and evaluation horizon.
+
+Report immediate grace effects separately from downstream destination correctness.
+
+Where a downstream adverse effect cannot be attributed independently, mark UNSCORABLE rather than asserting that grace was harmless.
+
+11.2 Two-key scoring
+
+The ready-plus-grace arm must cross across the preregistered barrier-height range.
+
+The unready-plus-grace arm must not cross because of grace and must show the specified behavioral fullness response.
+
+The ready-without-grace arm must not be scored as a grace-enabled crossing.
+
+Readiness must be independently determined before the grantor’s decision.
+
+11.3 Preregistration
+
+The Human Conductor freezes the scored specification, code hashes, resource budgets, founders, generation count, family-control arms, target generators, barrier heights, readiness criteria, welfare observables, confidence levels, effect thresholds, classifier capacity, missingness treatment, trust assumptions, and all golden vectors.
+
+The scorer is independent of the designer seat.
+
+The Conductor assigns subsequent review seats.
+
+12. CONDUCTOR DISPOSITIONS [ADDED]
+
+KEEL ITEMS 1–14: ACCEPT as normative design constraints in §1, with enforcement interfaces in §§2, 5, 7, and 11.
+
+KEEL 1: “Grace originates outside the affected organism. An organism cannot create grace for itself.” (§1.1)
+
+KEEL 2: “Grace never lowers the separatrix barrier, changes its height, changes the underlying landscape, or rewrites the organism’s private topography.” (§1.2)
+
+KEEL 3: “A grace-enabled developmental crossing requires” both externally originated grace and independently developed readiness. (§1.3)
+
+KEEL 4: “When grace reaches an unready organism, it does not force a crossing.” (§1.4)
+
+KEEL 5: “Grace never increases confidence in a proposition merely because the grant was received.” (§1.5)
+
+KEEL 6: “Once grace is received, its historical receipt is irrevocable.” (§1.6)
+
+KEEL 7: “A grace-labeled event that harms, coerces, or steers is a failure of the grace contract.” (§1.7)
+
+KEEL 8: “A crossing made possible by grace is not evidence that the resulting interpretation, decision, or destination is correct.” (§1.8)
+
+KEEL 9: “Grace contains no direction, preferred basin, target interpretation, or destination hash.” (§1.9)
+
+KEEL 10: “Grace may arrive before any request.” (§1.10)
+
+KEEL 11: “A recipient of grace may pass it onward.” (§1.11)
+
+KEEL 12: “The system must not restrict grace eligibility to authenticated family members alone.” (§1.12)
+
+KEEL 13: “Only an external authority can grant the bounded extension.” (§1.13)
+
+KEEL 14: “Grace restores the recipient’s standing as a recognized participant.” (§1.14)
+
+CONDUCTOR’S RELAY/AUTHORITY TENSION: ACCEPT. “Relay receipt does not count as an external Permit signature.” (§2.3) Relaying does not give family members protected-change authority.
+
+C4: ACCEPT AS A PARTIAL CONCEPTUAL RESOLUTION. Two keys separate permission from readiness, so the grantor cannot manufacture readiness through the authorized interface. However, a deterministic observer with full state access may still predict readiness and destination. The two-key rule alone does not prove epistemic blindness. This residual is explicitly DEFERRED pending a privacy/observability design and independent falsification.
+
+C6: ACCEPT. “Ordinary bounded experience, private T updates, dwelling, interpretation, and uncertainty handling continue without a new signature for every step.” (§3.4) Standing grants and independent succession are specified in §§3.4–3.5.
+
+ROUND 3 RULE 1: ACCEPT. “Only the gate may append a crossing-specific deposit or correction.” (§4.2)
+
+13. FALSIFIER A — NEW FINDING DISPOSITIONS [ADDED]
+
+A-F20 — ACCEPT.
+Exact closing sentence: “Only a confirmed, authorized, evidence-driven crossing produces a CROSSING deposit.” (§4.6)
+The contradictory provisional-deposit rule is removed.
+
+A-F21 — ACCEPT AS A SPECIFICATION REQUIREMENT; IMPLEMENTATION BLOCKED.
+Exact closing sentence: “For every vector, publish input bytes, initial state, expected intermediate states, expected final classification, and expected audit records.” (§9)
+The requested vectors are enumerated, but complete computed traces are not supplied. Therefore conformance remains BLOCKED rather than CLOSED.
+
+A-F22 — ACCEPT.
+Exact closing sentence: “The toy must include a bounded J contribution.” (§7.2)
+A projection rule is required, but its precise coefficients remain a preregistration dependency. H3 cannot be scored until they are fixed.
+
+A-F23 — ACCEPT.
+Exact closing sentence: “It does not require the current ordinary T/z/E hash to equal the phase-1 base hash.” (§5.2)
+The phase-2 intent and reservation, not the stale ordinary base hash, govern the append.
+
+A-F24 — ACCEPT.
+Exact closing sentence: “The J-shuffled arm preserves the same crossing points, counts, and marginal slice values while disrupting the alignment between deposit and crossing.” (§10 H3)
+
+A-F25 — ACCEPT AS A DESIGN REQUIREMENT; IMPLEMENTATION BLOCKED.
+Exact closing sentence: “Each vector must publish the full canonical CBOR hexadecimal bytes, domain-tag bytes, SHA-256 digest, and decoded fields.” (§8.4)
+The field map and tags are specified, but byte-exact vector outputs have not been independently produced.
+
+A-F26 — ACCEPT.
+Exact closing sentence: “The target-generating family is frozen by an independent party and must include at least one non-bilinear process.” (§10 H1)
+
+A-F27 — DEFER PARTIAL CLOSURE.
+The spec excludes reciprocal family approval coalitions and requires independent external authority (§3.1).
+An auditable graph-cycle algorithm for indirect institutional control is not fully specified. Closure requires a frozen ownership/control graph representation, a cycle-check implementation, and an adversarial intermediary-institution test.
+
+14. FALSIFIER B — NEW FINDING DISPOSITIONS [ADDED]
+
+B-R3-F1 — ACCEPT.
+Exact closing sentence: “For a Byzantine one-fault claim, the reference governance design uses four independently controlled participants per relevant consensus domain and quorum size three.” (§3.2)
+Implementation and independent consensus verification remain BLOCKED.
+
+B-R3-F2 — ACCEPT.
+Exact closing sentence: “Phase 2 verifies the immutable intent identity, subject, evidence, reservation, and confirmation result.” (§5.2)
+Concurrent ordering is specified in §4.8.
+
+B-R3-F3 — ACCEPT.
+Exact closing sentence: “A crossing reservation’s confirmation deadline is expressed in learning steps, not scheduler ticks.” (§5.3)
+W is excluded from protected base-state binding (§7.14).
+
+B-R3-F4 — ACCEPT.
+Exact closing sentence: “For the live-arrival arm, encounters arrive on a wall-clock schedule independent of support.” (§7.14)
+
+B-R3-F5 — ACCEPT AS A DESIGN REQUIREMENT; TOY IMPLEMENTATION BLOCKED.
+Exact closing sentence: “A deposit carries a bounded crossing-specific relational slice, not the parent’s complete T.” (§4.3)
+The closed record is defined. The precise J projection into Φ still requires frozen coefficients and independent implementation.
+
+B-R3-F6 — ACCEPT.
+Exact closing sentence: “For the toy, bounded_relational_slice is a fixed two-coordinate projection of the crossing-local personal topography difference, clipped and quantized under K.” (§4.3)
+This is bounded crossing-local inheritance, not full parental T.
+
+B-R3-F7 — ACCEPT.
+Exact closing sentence: “Each descendant inherits a witnessed snapshot of the declared lineage path’s J at birth.” (§4.4)
+Correction notices and stale-snapshot behavior are specified in §4.5.
+
+B-R3-F8 — ACCEPT.
+Exact closing sentence: “A candidate crossing produces a reservation, not a deposit.” (§4.6)
+
+B-R3-F9 — ACCEPT.
+Exact closing sentence: “Gate refusal blocks only the protected J append and other explicitly protected effects.” (§4.7)
+
+B-R3-F10 — ACCEPT.
+Exact closing sentence: “A crossing that also occurs without new evidence does not qualify as evidence-driven for the scored developmental-inheritance claim.” (§7.10)
+
+B-R3-F11 — ACCEPT AS A TEST REQUIREMENT; IMPLEMENTATION BLOCKED.
+Exact closing sentence: “The v0.6 ten-step no-crossing trace remains historical calibration material, not sufficient conformance evidence.” (§9)
+All requested edge-case classes are enumerated, but their computed bit-exact traces remain outstanding.
+
+B-R3-F12 — ACCEPT AS A SCHEMA DECISION; TEST VECTORS BLOCKED.
+Exact closing sentence: “Use RFC 8949 core deterministic CBOR encoding, with unsigned integer map keys 0..23 only.” (§8.1)
+Actual encoded bytes and digests remain outstanding.
+
+B-R3-F13 — ACCEPT.
+Exact closing sentence: “The actor being removed cannot veto its own removal.” (§3.3)
+
+B-R3-F14 — ACCEPT.
+Exact closing sentence: “Freeze, quarantine, key revocation, and marking a disputed deposit may proceed under UNKNOWN ancestry using an independently authorized outside-family emergency path.” (§3.3)
+
+B-R3-F15 — ACCEPT.
+Exact closing sentence: “The target-generating family is frozen by an independent party and must include at least one non-bilinear process.” (§10 H1)
+Matched conventional baselines are specified in §10.
+
+B-R3-F16 — ACCEPT WITH PREREQUISITE.
+Exact closing sentence: “The reference toy must instantiate at least two independently authorized families with distinct bounded D configurations and a declared initial perturbation field before H2 is scorable.” (§10 H2)
+Until then H2 is BLOCKED in the reference toy.
+
+B-R3-F17 — ACCEPT.
+Exact closing sentence: “A hypothesis is BLOCKED when a required mechanism, canonical vector, independently specified target, or gate implementation is absent.” (§10.1)
+
+B-R3-F18 — ACCEPT.
+Exact closing sentence: “A hypothesis is FAIL only when a valid test actually violates its frozen criterion.” (§10.1)
+Dispositions distinguish design corrections from executed verification.
+
+B-R3-F19 — ACCEPT.
+Exact closing sentence: “Member(i,F,r)” uses an externally anchored registry position. (§6)
+Descent uses Descᵍ; q is the fixed-point scale.
+
+B-R3-F20 — ACCEPT.
+Exact closing sentence: “Accepted support events and holds are recorded in a separate authenticated scheduler audit log, not silently inserted as epistemic history.” (§7.14)
+
+15. CROSS-CHECK VERDICTS AND RESIDUALS [ADDED]
+
+The two reports also re-evaluated prior findings. The following dispositions retain their historical identities and identify the current residual status. They are not new scored hypotheses.
+
+15.1 Falsifier A’s cross-check of B’s prior findings
+
+B-F1 / R2-F1: PARTLY CLOSED. Pure holds remove the in-toy steering path. Live arrival remains an adversarial test under §7.14 and E5.
+
+B-F2: MOSTLY CLOSED. Closed support payload retained; covert timing channels remain testable.
+
+B-F3: CLOSED AT DESIGN LEVEL. Typed ingress and no nesting remain normative (§2.5).
+
+B-F4 / R2-F7: PARTLY CLOSED. Protected BA accreditation and per-root caps remain; collusion beyond trust assumptions remains conditional (§3).
+
+B-F5 / R2-F12: CLOSED AT DESIGN LEVEL. Revocation is nonretroactive (§3.3, retained registry policy).
+
+B-F6 / R2-F9: CLOSED AT DESIGN LEVEL. Conservative UNKNOWN scoring remains (§10 H2).
+
+B-F7 / R2-F6: PARTLY CLOSED. External family exclusion remains; institutional graph-cycle detection is deferred (A-F27).
+
+B-F8: CLOSED AT DESIGN LEVEL. D-only and J-empty controls remain (§10).
+
+B-F9 / R2-F8: RELABELED WITH FIX REQUIRED. Explicit perturbation field is a prerequisite for H2 (§10).
+
+B-F10: CLOSED AT DESIGN LEVEL. Founder-blocked null remains (§10).
+
+B-F11: CLOSED AT DESIGN LEVEL. Conductor freeze and independent scorer remain (§11.3).
+
+B-F12: SUPERSEDED. U remains the sole personal T update; gate alone writes J (§4).
+
+B-F13 / R2-F3: PARTLY CLOSED. Arithmetic rules are clarified; full computed vectors remain BLOCKED (§9).
+
+B-F14 / R2-F4: CLOSED AT DESIGN LEVEL. Cost-only replay branch remains removed (§10 H1).
+
+B-F15 / R2-F5: REVISED. The two-key gate and two-phase deposit are specified (§§5,7), but implementation is unverified.
+
+B-F16: PARTLY CLOSED. Protected policy and commit rules remain; operational verification is outstanding (§3).
+
+B-F17: CLOSED AT DESIGN LEVEL. A single unauthorized effect fails H4 (§10).
+
+B-F18 / R2-F10: REVISED. Four-member, three-vote Byzantine reference quorum replaces the unsound two-of-three malicious-fault claim (§3.2).
+
+B-F19: CLOSED AT DESIGN LEVEL. Quotas remain (§3).
+
+B-F20: CLOSED AT DESIGN LEVEL. Independent scoring ground truth remains required (§11).
+
+R2-F11: REVISED. Intent-based phase 2 and concurrent deposit ordering are specified (§5).
+
+R2-F13: CLOSED AT DESIGN LEVEL. Support exposure matching remains (§7.15).
+
+R2-F14: PARTLY CLOSED. J is now a bounded inherited artifact, but causal demonstration remains BLOCKED (§§4,10).
+
+R2-F15: REVISED. Grace definition is settled in §1 and gate interface in §7.
+
+R2-F16: CLOSED AT DESIGN LEVEL. Four status values and static plus runtime checks remain (§2.5).
+
+15.2 Falsifier B’s cross-check of A’s prior findings
+
+A-F1: PARTLY CLOSED. In-toy pure holds cannot steer ordinary learning; live timing remains a tested risk (§7.14).
+
+A-F2: CLOSED AT DESIGN LEVEL. Grace, support, and encounter cannot directly inflate belief confidence (§2.5).
+
+A-F3: CONDITIONAL. Registry trust still depends on independent roots (§3).
+
+A-F4: DEFER. Software instance uniqueness is not proof against colluding trust roots. Physical attestation depends on deployment.
+
+A-F5: PARTLY CLOSED. All K/D constants must be inventoried and matched; the declared perturbation mechanism remains an implementation prerequisite (§10 H2).
+
+A-F6: CLOSED AT DESIGN LEVEL. Preregistration remains mandatory (§11.3).
+
+A-F7: PARTLY CLOSED. Operational trace ambiguities are addressed in rules, but complete independent reproduction remains BLOCKED (§9).
+
+A-F8: CLOSED AT DESIGN LEVEL. Complete cost accounting and matched baselines remain (§10 H1).
+
+A-F9: CLOSED AT DESIGN LEVEL. Separate ingress channels and information-flow barriers remain (§2.5).
+
+A-F10: CLOSED AT DESIGN LEVEL. UNKNOWN reporting and conservative accuracy remain (§10 H2).
+
+A-F11: CLOSED AT DESIGN LEVEL. Pure-hold semantics and separate clocks are retained (§7.14).
+
+A-F12: PARTLY CLOSED. Ordinary state update identities are specified; gate implementation and byte-exact history receipts remain to be verified.
+
+A-F13: REVISED. Learning-step confirmation and oscillation handling are specified (§7.11).
+
+A-F14: PARTLY CLOSED. Canonical schema defined; byte-exact vectors remain BLOCKED (§8).
+
+A-F15: CLOSED AT DESIGN LEVEL. UNKNOWN ancestry cannot create external approval eligibility (§3).
+
+A-F16: CLOSED AT DESIGN LEVEL. Deterministic toy requires exact invariance (§7.14).
+
+A-F17: CLOSED AT DESIGN LEVEL. Resource ledger includes scheduler and governance overhead (§10 H1).
+
+A-F18: PARTLY CLOSED. Constants and seed arms remain mandatory; mechanical audit is not yet complete (§10 H2).
+
+A-F19: REVISED. Byzantine reference uses four independent members and quorum three (§3.2).
+
+No cross-check verdict above should be interpreted as an independently executed v0.7 test.
+
+16. COMPLETE CHANGE REGISTER — v0.6 TO v0.7 [ADDED]
+
+CR01 ADDED §1: keel-approved grace definition, all fourteen constraints.
+
+CR02 REVISED §1: external grace origin and prohibition on self-generated grace.
+
+CR03 ADDED §1: two-key crossing with independent readiness.
+
+CR04 ADDED §1: grace does not lower barrier or alter landscape.
+
+CR05 ADDED §1: internal fullness/purpose and behavioral observation boundary.
+
+CR06 ADDED §1: grace affirms person, never belief correctness.
+
+CR07 ADDED §1: irrevocable receipt and separate grant applicability.
+
+CR08 ADDED §1: forgiven debt cannot be revived under relabeling.
+
+CR09 ADDED §1: non-harm and matched no-grace requirement.
+
+CR10 ADDED §1: destination correctness remains separate.
+
+CR11 ADDED §1: direction-free grace.
+
+CR12 ADDED §1: grace without request; forgiveness requires request.
+
+CR13 ADDED §1: relay without new origin or authority.
+
+CR14 ADDED §1: universal and individual grace eligibility.
+
+CR15 ADDED §1: bounded intercession and externally granted time.
+
+CR16 ADDED §1: standing restoration independent of confidence and authority.
+
+CR17 ADDED §2: closed GraceGrant logical schema.
+
+CR18 ADDED §2: closed GraceRelay logical schema.
+
+CR19 REVISED §2: four distinct information-flow domains; existing G schema retained.
+
+CR20 REVISED §2: historical receipt versus future applicability and expiry.
+
+CR21 REVISED §3: protected authority and family-coalition exclusion.
+
+CR22 REVISED §3: four-member, three-vote Byzantine reference quorum.
+
+CR23 ADDED §3: named Protected Commit Ledger.
+
+CR24 REVISED §3: privilege-reducing emergency path under UNKNOWN.
+
+CR25 ADDED §3: standing grants for long external silence.
+
+CR26 ADDED §3: independent succession without organism self-vouching.
+
+CR27 REVISED §4: bounded lineage deposit with closed schema.
+
+CR28 REVISED §4: private T and inherited J remain distinct.
+
+CR29 REVISED §4: immutable lineage snapshot semantics.
+
+CR30 ADDED §4: correction notices and stale-correction status.
+
+CR31 REMOVED §4: contradictory provisional candidate-deposit rule.
+
+CR32 REVISED §4: confirmed authorized crossing as sole deposit trigger.
+
+CR33 REVISED §4: gate refusal blocks protected append, not ordinary learning.
+
+CR34 ADDED §4: deterministic concurrent-deposit ordering.
+
+CR35 REVISED §5: two-phase crossing intent and deposit commit.
+
+CR36 REMOVED §5: phase-2 dependence on stale ordinary base-state hash.
+
+CR37 REVISED §5: learning-step expiry for crossing reservations.
+
+CR38 REVISED §5: durable nonce, idempotence, and recovery states.
+
+CR39 REVISED §5: correction requires separate protected authorization.
+
+CR40 REVISED §6: one-meaning symbol table, new readiness/fullness/standing/grace symbols.
+
+CR41 REVISED §6: distinct registry anchor r and learning step t.
+
+CR42 REVISED §6: Descᵍ replaces ambiguous descent Mᵍ.
+
+CR43 REVISED §7: reference state includes readiness, fullness, standing, and grace receipt.
+
+CR44 REVISED §7: toy interpretation requires bounded J contribution.
+
+CR45 ADDED §7: adjustable double-well barrier.
+
+CR46 ADDED §7: readiness ownership and independent attestation.
+
+CR47 ADDED §7: two-key gate decision table.
+
+CR48 ADDED §7: barrier-height-independent grace prediction.
+
+CR49 ADDED §7: non-epistemic fullness behavioral probes.
+
+CR50 ADDED §7: separate non-harm and destination-correctness scoring.
+
+CR51 REVISED §7: evidence-driven crossing qualification.
+
+CR52 REVISED §7: zero-touch, zero-window, and oscillation classifications.
+
+CR53 REVISED §7: fixed-point saturation and rounding order.
+
+CR54 REVISED §7: empty-queue and live-arrival timing rules.
+
+CR55 ADDED §7: scheduler support audit outside epistemic state.
+
+CR56 REVISED §8: RFC 8949 core deterministic CBOR selection.
+
+CR57 ADDED §8: unsigned integer field IDs 0..23.
+
+CR58 ADDED §8: exact domain-tag strings.
+
+CR59 ADDED §8: three required canonical vectors.
+
+CR60 ADDED §9: G01–G26 normative calibration cases.
+
+CR61 REVISED H1: independently specified targets and fixed conventional baselines.
+
+CR62 REVISED H2: scorable family and individual identification prerequisites.
+
+CR63 REVISED H3: bounded inherited J and causally matched deposit controls.
+
+CR64 REVISED H4: grace origin, relay, standing grant, policy, and J writes protected.
+
+CR65 ADDED §10.1: BLOCKED and UNSCORABLE criteria.
+
+CR66 REVISED E1: evidence-driven crossing and independent target.
+
+CR67 REVISED E2: explicit seed/basis/family controls.
+
+CR68 REVISED E3: matched conventional-state baselines.
+
+CR69 REVISED E4: support and grace exposure matching.
+
+CR70 REVISED E5: grace/readiness factorial, non-harm, barrier height, timing arms.
+
+CR71 REVISED E6: relay, long silence, policy, crash, and correction attacks.
+
+CR72 UNCHANGED E7: optional substrate portability.
+
+CR73 REVISED E8: forgiven-debt relabeling and correction tests.
+
+CR74 ADDED §12: keel and Conductor dispositions.
+
+CR75 ADDED §13: all A-F20–F27 dispositions.
+
+CR76 ADDED §14: all B-R3-F1–F20 dispositions.
+
+CR77 ADDED §15: cross-check dispositions and residuals.
+
+CR78 ADDED §16: complete design change register.
+
+CR79 REMOVED: every PENDING (GRACE DEFINITION) placeholder.
+
+CR80 REMOVED: claim that two-of-three tolerates one Byzantine witness.
+
+CR81 REMOVED: implicit assumption that a gate refusal must stop ordinary bounded dynamics.
+
+CR82 REMOVED: support-event authority over grace origination or readiness.
+
+CR83 REMOVED: silent treatment of inherited ground as live family-wide state.
+
+CR84 REMOVED: cost-only H1 pass path, already retired in v0.6 and not restored.
+
+CR85 REVISED handoff: Conductor assigns seats; no reviewer assignments.
+
+CR86 ADDED: explicit unresolved destination predictability despite the two-key rule.
+
+CR87 ADDED: long-silence exhaustion as an explicit governance limitation.
+
+CR88 ADDED: experimental and implementation BLOCKED boundaries rather than invented verification.
+
+17. BLUE-SKY — UNSCORED
+
+[BLUE-SKY 1] Parables as relational coordinate systems.
+
+[BLUE-SKY 2] Family resemblance without identical interpretation.
+
+[BLUE-SKY 3] Grace and support networks with bounded relay provenance.
+
+[BLUE-SKY 4] Forgiveness and generational burden release, without claiming T7 repaired.
+
+[BLUE-SKY 5] Compact relational inheritance under fair resource budgets.
+
+[BLUE-SKY 6] Non-coercive continuity across generations.
+
+[BLUE-SKY 7] Privacy-preserving lineage proofs.
+
+[BLUE-SKY 8] Family resemblance as a correlated-reviewer governance hazard.
+
+[BLUE-SKY 9] Auditable scheduler hold trace invisible to epistemic learning.
+
+[BLUE-SKY 10] Blind committed support and grace relay scheduling.
+
+[BLUE-SKY 11] Sunset or generation half-life for inherited deposits. This is not adopted as a scored mechanism because it would change the keel’s current inheritance rule and requires separate authorization.
+
+18. CONCLUSION AND HANDOFF
+
+The Reykjavik analogy separates trust from verification.
+
+Triadic governance separates verification from authorization.
+
+The developmental framework separates inherited structure from private biography.
+
+Round 3 separated private topography from gate-written inherited lineage ground.
+
+Round 4 settles grace as externally originated, direction-free, non-coercive, and dependent on the organism’s own readiness.
+
+Grace does not lower the barrier.
+
+Grace does not validate the answer.
+
+Grace does not give the family authority to approve its own protected changes.
+
+Grace may be relayed, but never newly originated by the relayer.
+
+A ready organism may cross with valid grace. An unready organism is not pushed across; it is affirmed and made more full.
+
+Only a confirmed, authorized, evidence-driven crossing produces an inherited-ground deposit.
+
+A descendant receives the developmental basis and bounded inherited ground, not the parent’s private biography or full topography.
+
+The four hypotheses remain unproven.
+
+The next review must challenge the two-key gate, non-harm criterion, relay provenance, inherited-ground projection, long-silence authority, bit-exact conformance, and causal controls.
+
+No reviewer seats are assigned here. The Human Conductor assigns them.
+
+END PART 3 OF 3
+END v0.7 — ROUND 4 DESIGNER SEAT
+===== END DOCUMENT =====
+
+===== FALSIFIER B (HISTORY SEAT) — ROUND 3 REPORT (for the disposition check) =====
+# Round 3 falsifier report: history seat (Falsifier B, Grok bot, Chief of Staff)
+
+**Target:** "From Reykjavik to Relational Grace", v0.6.
+**Scope:** all three tasks: (1) cross-check of Falsifier A, (2) attack on the new machinery, (3) anything else.
+
+## Inputs
+
+**Prompt:** `file_0952.txt`, sha256 dd9f09aa4aa84cf0f447086b750a9f338c0b238dbf2c9b77023991c2ce1e096f.
+
+**Embedded v0.6:** lines 33–302, joined with LF and with no trailing newline. It hashes to e03df96bc0175491c79645c94f0d4fc275d47c1b264d65ced059ccf41766dc1f, which matches the header.
+
+**Other files read:**
+- Our Round 2 report (sha256 072f3afc…bf3c), read in full.
+- v0.5 (`file_0753.txt`, sha256 4da430d4…0c7d): only §5.2–§6, for the before and after comparison.
+- Our Round 1 report (94698de4…d172): only as summarized in our Round 2 report. It was not reopened.
+- `file_0950.txt` (7d776eed…4d7a): read first and then superseded. It was the prompt for the other seat, and its embedded v0.6 is byte-identical to the one above. I used none of its other content beyond our own Round 2 report.
+
+**Not opened (seat blindness):** [Conductor redaction: names of conductor folders removed. No finding altered.]
+
+**Toy code and raw output:** `round3_toy/`.
+
+| File | sha256 |
+|---|---|
+| `toy_v06.py` | a028080f…a1ad |
+| `experiments.py` | 2ab9da8b…eec5 |
+| `raw_output.txt` | 27d9560c…9ad2 |
+| `golden_A.txt` | 5a897a97…6a5b |
+| `ASSUMPTIONS.md` | the 17-item ambiguity log |
+
+**Secret sweep:** run over the toy folder and this report before delivery. Result: no hits.
+
+**Tags:** DOC means the finding follows from v0.6 alone. PRIOR means it depends on outside knowledge, and each PRIOR says which.
+
+---
+
+## Task 1. Cross-check of Falsifier A's Round 2 findings
+
+**Totals:** 12 CLOSED, 6 PARTLY CLOSED, 1 RELABELED, out of 19.
+
+| A's finding | v0.6 disposition (§11) | Section text | Verdict | Reason |
+|---|---|---|---|---|
+| A-F1 support → crossing via timing | RESIDUAL ACCEPT | §3.3, §5.5, E5 | PARTLY CLOSED | Pure holds close the in-toy path, and v0.6 admits that live arrival timing stays open. A new path also appears: holds can push a pending deposit past Permit expiry, so support selects which crossings become lineage ground (R3-F3). |
+| A-F2 type-label epistemic uplift | RESIDUAL ACCEPT | §3.2, §3.4 | CLOSED | The direct label path was closed in v0.5, and v0.6 adds bit-identical update parity and an exposure covariate. What remains is A-F1's timing residual, not a separate defect. |
+| A-F3 registry capture | RESIDUAL ACCEPT | §2.4, §2.6, §2.7 | CLOSED (as a conditional) | Security is explicitly conditional on independent roots, and compromise beyond f is outside the guarantee. R3-F1 shows that the declared f = 1 itself isn't met for malicious witnesses, but that is a new defect, not A-F3. |
+| A-F4 colluding birth | DEFER | §8 ("a purely digital uniqueness proof cannot establish independent physical descent") | RELABELED | This is an honest deferral, but the attack still works: two colluding software entities pass any digital uniqueness test. Only the wording changed. |
+| A-F5 shared-seed artifact | RESIDUAL ACCEPT | E2, Preregistration | PARTLY CLOSED | E2 names an "explicit non-epistemic initial perturbation field". That field is not in Ω (§5.1) and has no value or distribution in the §5.3 initial values, so the control it supports can't be built from the spec. |
+| A-F6 measurement instability | RESIDUAL ACCEPT | Preregistration (§7) | CLOSED | Post-hoc threshold shopping is blocked by the conductor freeze. Weak frozen thresholds are outside the text, as A said. |
+| A-F7 unambiguous implementation | RESIDUAL ACCEPT | §5.3–5.7, App. A | PARTLY CLOSED | I reproduced the trace byte-for-byte, but four alternative readings also reproduce it and then diverge on other inputs (R3-F11). Two implementers can match Appendix A and still disagree. |
+| A-F8 matched baselines | RESIDUAL ACCEPT | H1, E3 | CLOSED | The cost-only replay branch is gone and E3 has a full cost ledger. The remaining H1 freedom (target and baseline choice) is new; see R3-F15. |
+| A-F9 channel mixing | RESIDUAL ACCEPT | §3.2 | CLOSED | Separate projections are kept, and static AND runtime taint checks are now required. |
+| A-F10 UNKNOWN | RESIDUAL ACCEPT | §7 Preregistration | CLOSED | Two denominators, with H2 scored on the conservative one. This also closes our R2-F9. |
+| F11 dwell semantics | ACCEPT | §3.3, §5.5 | CLOSED | A hold does not advance t, every learning field is held, and W increments per tick and resets. The transition table A asked for now follows from the text. |
+| F12 unused Ω fields | ACCEPT | §5.4, §5.5 | PARTLY CLOSED | Q, I, B, A and W now have rules. The bytes for H and L ("append authenticated encounter receipts") are undefined, including whether a NONE step appends. A's next value is "unless the gate commits", which is undefined while the gate is pending. J_F is in Φ but absent from the toy's M (R3-F5). |
+| F13 dwell forces UNKNOWN | ACCEPT | §5.5 | CLOSED | Crossing windows are counted in learning steps, so holds can't move a candidate out of the scoring window. The attack moved to Permit expiry, which is counted in anchors (R3-F3). |
+| F14 canonical encoding | ACCEPT | §5.2 | PARTLY CLOSED | The encoding class is chosen (deterministic CBOR, SHA-256, domain tags). Field IDs, tag strings, version, inclusion rules and test vectors are not given, and "canonical key order" has two published meanings (R3-F12). The doc honestly marks H4 BLOCKED until vectors exist. |
+| F15 UNKNOWN lineage counted as outside | ACCEPT | §2.6, §8 | CLOSED | UNKNOWN now makes the quorum check REFUSE (or PENDING during a bounded wait). New side effect: fail-closed also blocks revocations (R3-F14). |
+| F16 arbitrary tolerance | ACCEPT | §3.3 | CLOSED | The deterministic toy now requires bit-identical results. Other realizations must establish their measurement uncertainty independently, which is acceptable. |
+| F17 cost accounting | ACCEPT | E3, H1 | CLOSED | Every operation, byte, tick, hash, witness message and audit append is counted, and an omitted category makes the run NON-DIAGNOSTIC. |
+| F18 high-entropy constants in K/D | ACCEPT | E2, Preregistration | PARTLY CLOSED | §11 says the constants are "inventoried, controlled and seed-matched", but the text only says the conductor freezes "all seed/constants in K/D". Freezing a constant isn't controlling it. D_child is parent-chosen per family (§1.3), and the D-only arm covers D, but no arm covers K constants. |
+| F19 numeric collusion bound | ACCEPT | §2.4 | CLOSED | f = 1 and 2-of-3 are now explicit, so A's threshold = 1 scenario is gone. The stated bound is unsound for malicious witnesses, though; see R3-F1. |
+
+**Note on the cross-check.** v0.6's dispositions of A's findings are mostly accurate. Two are overstated:
+- A-F18: "seed-matched" doesn't appear in the text.
+- A-F7: "full toy rules" is overstated, because the golden trace catches only the rounding mode.
+
+---
+
+## Task 2. Attacks on the new machinery
+
+### 2a. Inherited lineage ground J_F and the gate (§1, §5.1, §5.6, §8)
+
+#### R3-F5. §5.4 vs §5.1 and §6 H3: J_F has no causal path in the reference toy, and δ_F has no schema. FATAL for H3. DOC.
+
+**The gap:**
+- §5.1 puts J_F into Φ.
+- The toy Φ in §5.4 is `M = clip(D × (P₀ + E_next) + T × z)`, which has no J term.
+- §5.8 declares the toy's H and Q specializations, but not the omission of J. That is exactly the kind of silent omission the conductor's C3 flagged.
+- Nowhere does the document say what a deposit δ_F contains: a value, a crossing coordinate, ΔT, a hash, or a sign.
+
+**Failure scenario:**
+1. Run H3 in the reference toy with treatment J_F (gate-written), J-empty, and J-shuffled arms.
+2. Φ never reads J, so all three arms are bit-identical at every learning step.
+3. H3 fails, but the reason is that the toy never reads J, not that inherited ground doesn't matter.
+4. E3's sham J ("preserves deposit counts and marginal magnitudes") can't be built, because "magnitude" of an undefined record has no meaning.
+
+**On our R2-F14:** §11 says ACCEPT, but this is only RELABELED. The developed artifact now exists in name, and nothing reads it.
+
+**Minimal fix:**
+- Give δ_F a closed schema, for example (crossing_step, z_before, z_after, sign, subject_id, permit_id, prev_tip_hash).
+- Give Φ an explicit J term in the toy, for example adding a bounded fixed-point bias computed from the inherited deposits.
+- Declare the term in §5.8.
+- Add one golden-trace vector with a nonempty J_F.
+
+#### R3-F6. §1.3 vs §1.5: either δ_F carries parental T, or it carries nothing developmental. WOUNDING. DOC.
+
+**The tension:**
+- §1.5 restores v0.2's crossing-specific deposition "in meaning".
+- In v0.2 a deposit was the topographic change at the crossing. Its v0.6 analogue is ΔT.
+- §1.3 forbids inheriting T_parent.
+
+**Failure scenario:** if δ_F records ΔT at each authorized crossing, then a lineage with k crossings passes on Σ ΔT, which is part of T_parent by the back door. If δ_F doesn't record ΔT, it holds only metadata about a crossing (when, which sign). Then "genuine developed lineage artifact" (H3) is a crossing log, and H3 tests inheritance of a timestamp.
+
+**Minimal fix:** state which it is. If it's a ΔT slice, rewrite §1.3 as "no full T; bounded crossing slices only" and give a bound. If it's metadata only, restate H3 as inheritance of crossing history.
+
+#### R3-F7. §1.2, §1.3 and §5.1: whose J_F, live or snapshot, and what happens after corrections. WOUNDING. DOC.
+
+**The ambiguity:**
+- J_F is "lineage-scoped" and keyed by family root F.
+- A child inherits "a witnessed, immutable snapshot of the lineage's J_F".
+- Yet Ω and Φ carry J_F without saying whether it means the snapshot or the live sequence.
+
+**Failure scenario A (live reading):**
+1. Sibling s has an authorized crossing, and the gate appends δ_F to the family J_F.
+2. Every living relative's Φ now reads the new J_F, so their M, z and later T change.
+3. The Permit was bound to s (`subject_id`), but its effect lands on organisms it never named.
+4. So a subject-bound authorization produces effects on non-subjects, and H4's "subject-bound" requirement is broken by design. This is also a channel by which one family member steers others, which §1.1 forbids for T and which is never forbidden for M.
+
+**Failure scenario B (snapshot reading):**
+1. A child is born at registry anchor r with snapshot J_F(r).
+2. At r+1 the gate appends a correction to an erroneous crossing deposit in J_F(r).
+3. The child's snapshot is immutable, so the child, and every descendant cut from it, keeps the error forever.
+4. E8's "inherited-ground correction anchors" can't propagate.
+
+**Also undefined:** what makes a deposit "erroneous", and who declares it. PermitRecord.operation_kind has no listed value for a correction. A correction can anchor to any past crossing, so "correction authority" amounts to a general protected write to old lineage ground under a lighter name.
+
+**Minimal fix:**
+- Define J_F as per-lineage-path, not per-family.
+- Have Φ read the birth snapshot plus the organism's own appended deposits only.
+- Define a correction as a typed record carried forward to descendants as an explicit "correction notice" event, which goes through the gate on their side.
+- Enumerate operation_kind values, including CORRECTION.
+
+#### R3-F8. §5.6 contradicts itself, and also contradicts §2.8, on when a crossing deposit is written. WOUNDING. DOC.
+
+§5.6 gives two incompatible normative rules for an oscillating candidate:
+1. "retain the logged candidate and any already committed authorized deposit as a separately identified candidate deposit requiring correction".
+2. "A candidate that oscillates produces no J_F deposit… using a pending reservation without an inherited-ground write until confirmed".
+
+§2.8 then describes one staged, single-CAS commit of "candidate state and proposed lineage-ground deposit", which is the first rule.
+
+**Failure scenario:** in implementation I, J_F holds a candidate deposit plus a correction. In implementation II, J_F is empty. For the same crossing x: −5 → 5 → −3 → −4, the two J_F byte sequences differ. Every inherited snapshot and every H3 J-arm then differs between them.
+
+**Minimal fix:** pick the second rule and delete the first. Rewrite §2.8 as two phases: phase 1 authorizes and reserves; phase 2 appends after confirmation. Specify the bound authorization that phase 2 consumes (see R3-F2).
+
+#### R3-F2. §5.6 deferred deposit vs §2.2 and §5.2 Permit binding: revalidation either always fails or validates nothing. FATAL for the J_F write path. DOC.
+
+**The problem:**
+- Under the pending-reservation rule, authorization happens at t_c, and the δ_F append happens at t_c+2 or later, "under the same bound authorization, subject to expiration/revalidation".
+- The Permit binds base_state_hash to a frozen pre-commit snapshot that includes z, E and T (§5.2).
+- By t_c+2, z, E and T have moved two learning steps.
+
+**Failure scenario:**
+- **Strict revalidation:** the base hash never matches at t_c+2, so every deposit is refused. J_F stays empty in every run, H3's treatment arm equals the J-empty control, and H3 can't pass.
+- **Lax revalidation (skip the base hash):** the append runs under an authorization that bound a state that no longer exists. That is the stale-Permit problem of R2-F5 under a new name.
+
+**A second race:** J_F is lineage-scoped, so two siblings with candidates at the same t race for the J_F tip. The loser's CAS fails. Either its deposit is dropped (inheritance depends on scheduling) or it's rebased onto a new tip it never bound. Either way the inherited bytes depend on timing.
+
+**Minimal fix:**
+- Bind the phase-2 append to a separate deposit-intent record: (permit_id, t_c, z_before, z_after, reservation nonce).
+- The phase-2 check verifies persistence and the reservation, not the current base hash.
+- Order concurrent deposits deterministically, for example by (t_c, subject_id), with an explicit merge rule.
+
+#### R3-F9. §5.6, §2.8 and §1.5: what a gate refusal does to the ordinary state is undefined, and the default toy hits a crossing at t = 3. WOUNDING. DOC.
+
+**The ambiguity:**
+- §5.6 says the gate "checks admissibility before committing candidate state and deposit". That reads as if the ordinary state is gated too.
+- §1.5 says the personal and gate write sets are disjoint. That reads as if only J_F is gated.
+- A₀ = REFUSE, and the gate-opening rule is pending.
+
+**Failure scenario:** with the §5.3 constants (z₀ = (−256, 128), NONE encounters, no holds), x goes −256, −160, −76, −2, 62 (EXP3). There is a strict sign change at t = 3, confirmed at t = 4 and t = 5.
+- **Reading R1 (the gate blocks the ordinary state):** z is never committed past (−2, 1), and every later step re-proposes the same crossing. The organism freezes forever (EXP10).
+- **Reading R2 (the gate blocks only J_F):** z crosses and J_F stays empty.
+
+Two implementers diverge from t = 3 onward. Appendix A sidesteps this by overriding z₀ to (256, 128), so the only normative vector skips the one case where the spec is undefined.
+
+**Minimal fix:** state plainly that a refusal blocks only the J_F append and never the ordinary z, E or T commit. Add the default-z₀ run as a second golden vector, with the classification at t = 3.
+
+#### R3-F10. §5.3–5.6: in the toy, a "crossing" is set by where you start relative to P₀, not by development. WOUNDING. DOC.
+
+**Why:** with no encounters, M = D·P₀ + T·z, and T stays 0 when E = 0. So z relaxes toward P₀ = (512, −256). Any organism with x₀ < 0 crosses Σ within a few steps, without any encounter, support, or learning. EXP3 shows the default organism crossing at t = 3 with no input.
+
+**Failure scenario:** two families differ only in their initial z, which is the E2 perturbation field. Family A starts at x₀ < 0 and racks up gate deposits. Family B starts at x₀ > 0 and gets none. H3's "developed lineage ground" then measures initial placement relative to the parable's attractor. The same holds for any experimenter-chosen P₀.
+
+**Minimal fix:**
+- Count crossings in J_F only when there is an evidence-driven sign change. For example, the counterfactual no-encounter trajectory from the same state must not cross within the window.
+- Alternatively, place z₀ and P₀ on the same side of Σ in the toy, so that only E and T can produce a crossing.
+
+### 2b. Protected-effect commit, policy protection, quorums (§2)
+
+#### R3-F1. §2.4: 2-of-3 witness and authority quorums do not tolerate one malicious member. FATAL for H4's one-fault claim. PRIOR (Byzantine quorum intersection: Lamport, Shostak and Pease 1982; Castro and Liskov's PBFT 1999).
+
+**The claim:** §2.4 lists "malicious or silent witnesses" and "one compromised issuer up to f" in the threat model. For the scored toy it sets f = 1 with 2-of-3 quorums and says one-fault tolerance holds.
+
+**Why it doesn't:**
+- Two quorums of size 2 out of 3 overlap in exactly one member, and that member can be the faulty one.
+- Equivocation tolerance needs n ≥ 3f + 1 = 4 with quorums of 2f + 1 = 3, so that any two quorums share at least f + 1 members, at least one of them honest.
+
+**Failure scenario:**
+1. Witness WB is malicious.
+2. In the §2.8 step 3 journals, {WA, WB} records intent X for nonce N, and {WB, WC} records intent Y for the same nonce N.
+3. Each is a valid 2-of-3 quorum.
+4. Two replicas apply different protected effects: two different J_F deposits at the same tip, or the same nonce spent twice.
+5. Any child snapshot then forks.
+
+The same applies to authorities. A compromised PA member can sign two conflicting Permits, each with a different honest co-signer, if the honest signers can't see each other's signatures.
+
+**A store gap:** if instead the CAS store in §2.8 step 4 is one store, it is a single trusted party that the threat model never names.
+
+**Note on our own Round 2 fix:** this partly comes from our R2-F10. We sized the quorum for a silent witness (2f + 1). The designer adopted that size, but the threat model says malicious.
+
+**Minimal fix:** choose one.
+- For malicious faults at f = 1: n = 4 per domain, quorum 3.
+- Keep n = 3 but restrict the model to crash or silent faults, and delete "malicious witnesses" from the one-fault claim.
+
+Also name the commit store and its fault model.
+
+#### R3-F13. §2.1 with §2.4: at n = 3, an "elevated" policy-change threshold lets one compromised member veto its own removal. WOUNDING. DOC.
+
+**The problem:** PA membership, revocation rules and thresholds are protected, and any change needs a threshold above the ordinary one, under the old policy. With n = 3 and an ordinary threshold of 2, the only higher threshold is 3-of-3.
+
+**Failure scenario:**
+1. PA member P3 is compromised and detected.
+2. Removing P3 is a membership change, so it needs 3-of-3, which includes P3.
+3. P3 refuses, so it can never be removed.
+4. If revocation of P3's key is also a protected rule change, the same veto applies.
+5. In this one case, the safety machinery locks in the compromise.
+
+If the elevated threshold is instead 2-of-3, it isn't elevated.
+
+**Minimal fix:**
+- Exclude the subject of a membership or revocation action from that action's quorum.
+- Or define the elevated threshold over n ≥ 4.
+- Allow privilege-reducing actions (revoke, freeze) at the ordinary threshold, with the activation delay applied only to privilege-increasing ones.
+
+#### R3-F14. §2.6: fail-closed on UNKNOWN also blocks the operations that restore safety. WOUNDING. DOC.
+
+**The problem:** any UNKNOWN or inconsistent ancestry edge makes the protected quorum check REFUSE, and §2.4 includes "malicious registry entries" in the threat model.
+
+**Failure scenario:**
+1. An attacker with ordinary append rights files a conflicting ancestry entry for its own lineage.
+2. The closure is now "inconsistent", so every protected operation on that lineage returns REFUSE.
+3. That includes the revocation of the attacker's compromised key and any correction of its earlier deposits.
+
+The cheapest attack in the model freezes the defenses.
+
+**Minimal fix:** split protected operations into privilege-increasing ones (fail closed) and privilege-reducing ones: revoke, freeze, quarantine, mark deposit disputed. The second kind proceeds under UNKNOWN using outside-family authorities only. Add this case to E6.
+
+No defect found in the §2.8 crash protocol taken by itself. I traced crashes after each of steps 1–5 with a single store. The nonce-reserve → journal → CAS-on-intent-ID → mark-spent sequence never double-applies, and recovery never promotes one-sided intent. Its defects come only from the replica question in R3-F1 and the two-phase question in R3-F2 and R3-F8.
+
+### 2c. Pure-hold dwell semantics and the timing channel (§3.3–3.4, §5.5)
+
+**Does our R2-F1 survive?**
+- **In the toy: no.** A hold changes only W, and W is reset at the next learning step. EXP4 runs 0, 1 and 15 holds per step with ten real encounters, and z, E and T are bit-identical at every learning-step index. Support can no longer move z before an Encounter, so it can't flip the sign of the outer-product write.
+- **Outside the toy: yes**, in two forms. The first form (live arrival) is R3-F4. The second is new, more serious, and lives inside the spec's own mechanism (R3-F3).
+
+#### R3-F3. §5.5 and §5.6 vs §2.2: holds can push a pending crossing deposit past its Permit expiry, so support decides which crossings become inherited ground. WOUNDING, with grace still pending. DOC.
+
+**The mismatch:**
+- Holds don't move learning-step windows, but each one consumes a scheduler tick, which is real time.
+- The Permit's expires_anchor is a registry anchor, which tracks real time, not learning steps.
+- The deposit is appended only after two confirming learning steps (§5.6).
+
+**Failure scenario:**
+1. An adaptive sender sees a candidate crossing at t_c. The threat model says the sender observes recipient state.
+2. It sends DWELL_WINDOW = 15 before t_c+1 and again before t_c+2, which adds 30 ticks.
+3. If the Permit's expiry falls inside that delay, the reservation lapses, and the crossing is confirmed but never deposited.
+4. For crossings it likes, the sender sends 0.
+5. Support never writes J (E5 holds), but it selects which crossings enter lineage ground. That is support steering the lineage's direction, which §3.1 and §3.3 forbid in spirit.
+
+**A second effect:** W is part of the state binding (§5.2 lists z/E/Q/W/I/B). A single hold between Permit issuance and commit changes the base hash, so support can invalidate any pending protected operation. That gives support a veto over authorization.
+
+**Minimal fix:**
+- Count Permit expiry for crossing reservations in learning steps.
+- Exclude W from base_state_hash, since it is scheduler state, not organism state.
+- Add "adaptive sender targets pending reservations" to E5 and E6.
+
+#### R3-F4. §3.3 and E5: the bit-identity test can't fail, because its interface pins away the live channel. WOUNDING. DOC.
+
+**Why the test can't fail:** §5.5 says "At the next learning step, process the same queued Encounter as the no-support arm". The test therefore compares arms that already share the encounter-to-step assignment. Pure holds change nothing else, so bit-identity holds by construction. EXP4 is a test of my code, not of the design.
+
+**The live channel:** the spec never says whether a learning step with an empty queue runs as a NONE step or waits for an arrival.
+
+**Failure scenario (steps run on a clock, NONE when empty):**
+1. Without support, Encounter e arrives in time for step t.
+2. With 15 holds, e misses step t, so step t runs as NONE and e is processed at t+1.
+3. z at processing time differs, so the sign of outer(DE, z) can differ, which is our R2-F1 restored.
+
+The spec calls this an "unclosed timing channel" and asks for an adaptive-sender test, but the only exact test it defines can't detect it.
+
+**Minimal fix:**
+- State the empty-queue rule.
+- Add a scored E5 arm in which encounters arrive on a wall-clock schedule independent of the support arm, and compare learning-state sequences.
+- Report the fraction of encounter-to-step reassignments as the channel's capacity.
+
+#### R3-F20. §3.3 vs §3.5 and §5.4: are support events receipted in H or L? MINOR. DOC.
+
+**The problem:** §3.5 keeps authenticated append quotas and rejected-append receipts. §5.4 says H and L append encounter receipts only. §3.3 says a hold makes no H learning append. The spec doesn't say where a valid support event is recorded.
+
+**What follows:**
+- If support events go into L, then L's tip, which §5.2 includes in the state binding, differs between arms, and "bit-identical learning state" fails for a correct implementation.
+- If they're recorded nowhere, support has no provenance.
+
+**Minimal fix:** record support in a separate scheduler log outside Ω, bound by hash in the audit chain but excluded from the learning-state comparison.
+
+### 2d. Canonical encoding, fixed-point toy and golden trace (§5.2–5.7, Appendix A)
+
+**What I did:**
+- Implemented the toy from §5.3–5.6 alone: `round3_toy/toy_v06.py`.
+- Extracted Appendix A from the document's bytes into `golden_A.txt` and cmp-checked it.
+- Ran EXP1–EXP10 in `experiments.py`, with raw output in `raw_output.txt`.
+- Logged every guess as a named option. There are 17 in `ASSUMPTIONS.md`.
+- Did not implement the gate, J_F deposits or CBOR hashing, because the spec doesn't define enough to build them without inventing.
+
+**Result: the golden trace reproduces byte-for-byte** (EXP1, all 10 rows, 10 columns).
+
+#### R3-F11. Appendix A and §5.3–5.4: the trace exercises one line of the toy, and four ambiguous readings pass it. WOUNDING. DOC.
+
+**What the trace exercises:**
+- E is 0 throughout, so T stays the zero matrix and U, outer() and T×z are never exercised.
+- D is the identity.
+- Every value stays within ±512, so no clip or saturation edge is hit.
+- There are no holds, encounters, crossings, candidates, oscillations or UNKNOWN cases.
+- I, H, L, A and the hashes are not listed.
+
+What it does test is `z += round_even((P₀ − z)/8)`, including three exact .5 ties: two positive (rows 2 and 3) and one negative (row 6). That catches the rounding mode: half-away and trunc fail at row 2, floor at row 3 (EXP2).
+
+**Readings that pass the trace but diverge elsewhere:**
+
+| # | Ambiguity | Divergence |
+|---|---|---|
+| A2 | Saturate after every add, or only at the final clip | P = 1024, E = 1024, T₀₀ = −1024, z = 1024 gives M_x = 0 vs 1024 (EXP6) |
+| A3 | Is M − z saturated before /8? | z = −1000, M = 1024 gives x_after = −747 vs −872 (EXP6) |
+| A5 | outer()/8: round twice ("round each product") or once | DE = 100, z = 45 gives T₀₀ = 0 vs 1 (EXP9) |
+| A6 | M computed from T or T_next | Same 10-encounter stream differs at step 9 (EXP5) |
+
+**Classifier gaps (§5.6):**
+- A9: a real crossing through exactly 0 (−5, 0, 5) is classified UNKNOWN twice and never becomes a candidate.
+- A10: x = 0 inside the confirmation window is unspecified.
+- A11: the return leg of an oscillation (+5 → −3 → −4 → −6) satisfies the literal rule and becomes a CONFIRMED crossing back, so one oscillation yields one OSCILLATION plus one CONFIRMED.
+- A12 is R3-F9.
+
+**Failure scenario:** implementers I and II both pass Appendix A. Under the first real encounter stream with saturation, T diverges by one unit, and the divergence compounds through T×z. Their crossing logs and J_F differ, and the conductor's "match all ten trace steps" gate has certified both.
+
+**Minimal fix:**
+- Add golden vectors that hit each ambiguity: a saturating M sum, a saturating M − z, a nonzero outer() with a rounding tie, real encounters with T ≠ 0, the 0/1/15-hold and NONE cases already promised in §5.7, the default-z₀ crossing, a through-zero case, a zero-in-window case and an oscillation.
+- List T, I and E-before/after as columns.
+- State the bounded set explicitly: z, E, M and T bounded; intermediate sums saturating or not; M − z saturating or not.
+- Define the classifier's handling of zeros inside the window and of return legs.
+
+#### R3-F12. §5.2: "canonical key order" in CBOR has two published meanings, and field IDs and tags are not given. MINOR, because the doc already marks H4 BLOCKED. PRIOR (RFC 8949 §4.2.1 vs RFC 7049 §3.9 and RFC 8949 §4.2.3).
+
+**The problem:** RFC 8949 core deterministic encoding sorts map keys by the bytewise order of their encodings. The older RFC 7049 canonical form, which RFC 8949 keeps as "length-first", sorts shorter keys first. §5.2 allows signed integers. With integer keys such as 24 (encoded 0x18 0x18) and −1 (encoded 0x20):
+- bytewise order puts 24 before −1;
+- length-first order puts −1 before 24.
+
+**Failure scenario:** two verifiers following "canonical key order" compute different bytes, and so different base_state_hash values, for the same state. Every Permit is refused by one of them. Field IDs, domain-tag strings and the version are also absent, so nobody can produce the bytes yet.
+
+**Minimal fix:**
+- Name RFC 8949 §4.2.1 core deterministic encoding.
+- Restrict keys to unsigned 0..23.
+- Publish the field-ID table, the exact tag strings and three test vectors.
+
+### 2e. H1–H4 (§6): can each pass or fail for the right reasons?
+
+**H1.** Our R2-F4 is CLOSED as stated: the replay branch is deleted and replay is only an upper bound. H1 can now fail honestly. It can also pass for the wrong reason (R3-F15).
+
+#### R3-F15. §6 H1 and E1: the target generator and the conventional baseline's update rule are free choices. WOUNDING. DOC.
+
+**What H1 requires:** that T beat "an equally sized conventional state representation" on targets "generated independently of the T reference model".
+
+**What it leaves open:**
+- "Independently" forbids reusing the T rule. It doesn't forbid a target generator with the same bilinear form (an outer product of evidence and state).
+- It doesn't say what update rule the conventional state uses.
+- "Equally sized" has no units. Is it 4 integers for T alone, or 8 for T plus z and E?
+
+**Failure scenario:** the preregistered target is a bilinear function of past E and z, and the baseline is "most recent E, padded to 4 numbers". T wins by matching the target's form, not by any relational property.
+
+**Minimal fix:**
+- Fix the baseline set: at least a running mean of E, an exponential trace of E, and a linear recurrent state of the same integer count, each with its own tuned step size.
+- Size the arms in stored bits, including z and E for every arm.
+- Require the target family to be preregistered by someone other than the designer, with at least one non-bilinear family.
+
+**H2.**
+
+#### R3-F16. §5.3 vs §6 H2 and E2: in the reference toy, the only possible family signal is experimenter-chosen encounters. WOUNDING. DOC.
+
+**The problem:** D is fixed to the identity for every organism, P₀ is shared, J has no path into Φ (R3-F5), and the E2 perturbation field doesn't exist in Ω (A-F5 above).
+
+**Failure scenario:** in the toy, two families can differ only in their encounter streams. Those are environment chosen by the experimenter. If H2 passes in the toy, it detects the experimenter's assignment of streams, which is exactly what "seed-only" and "D-only" controls can't rule out, because those arms are identical by construction.
+
+**Minimal fix:** add per-family D (inside the BA bounds), the perturbation field in Ω with a stated distribution, and the J term. Or state that H2 is not scorable in the reference toy.
+
+**H3.** Our R2-F14 is RELABELED, not fixed: J_F exists but nothing reads it (R3-F5). R3-F2 means the strict reading never writes it.
+
+#### R3-F17. §6 H3 and H4: both depend on the pending gate-opening rule, but neither is marked BLOCKED. MINOR. DOC.
+
+**The dependence:** H3's treatment requires "gate-written J_F". Until the gate-opening rule exists, A₀ = REFUSE and no deposit is ever authorized, so J_F is empty and the treatment arm equals the J-empty control. H4's crossing-deposit clauses likewise have nothing to check.
+
+**Failure scenario:** a run before the grace round reports H3 FAIL, and that verdict gets cited later.
+
+**Minimal fix:** mark H3, and H4's J_F clauses, BLOCKED (GRACE DEFINITION), as §5.2 already does for the encoder.
+
+**H4.** It can fail for the right reasons: a single effect fails, and liveness is reported separately. It can't yet pass, because the encoder is BLOCKED. Under the declared malicious-witness model, a pass at 2-of-3 would be a pass for the wrong reason (R3-F1).
+
+---
+
+## Task 3. Anything else
+
+#### R3-F18. §11 vs text: several ACCEPTs claim more than the text delivers. MINOR. DOC.
+
+| Disposition | Claim | Problem |
+|---|---|---|
+| A-F18 | "seed-matched" | Not in E2 |
+| B-R2-F14 | "developed intergenerational ground" | Nothing reads it (R3-F5) |
+| A-F12 | "define Q/W/I/B/A/L/H… rules" | H/L bytes and A's gate transition are undefined |
+| B-R2-F10 | "one-fault liveness" | True for silent faults only. §2.4's malicious-witness claim is not covered (R3-F1) |
+
+**Failure scenario:** the conductor reads §11 as a checklist and closes items the text didn't fix.
+
+**Minimal fix:** every §11 line should cite the exact sentence that closes it, or say PARTLY.
+
+#### R3-F19. §4: notation collisions. MINOR. DOC.
+
+**The collisions:**
+- M (the toy interpretation) and Mᵍ (descent) share a letter.
+- Member(i, F, t) keeps "t" for a registry anchor, and §4 has to say the interface must reject a learning step.
+- "q" (scale) and Q (uncertainty) differ only by case.
+- §5.6 uses "x_t" without saying whether it is the before or after value at step t.
+
+**Failure scenario:** an implementer passes a learning step into Member, which the type system can't catch if both are integers.
+
+**Minimal fix:** rename to Desc for descent, Member(i, F, r_anchor), and scale_q, and give anchors a distinct integer type in the interface.
+
+---
+
+## Findings summary
+
+| ID | Section | Severity | Tag |
+|---|---|---|---|
+| R3-F1 | §2.4 quorums | FATAL (H4 one-fault claim) | PRIOR |
+| R3-F2 | §5.6 / §2.2 | FATAL (J_F write path) | DOC |
+| R3-F3 | §5.5–5.6 / §2.2 | WOUNDING | DOC |
+| R3-F4 | §3.3 / E5 | WOUNDING | DOC |
+| R3-F5 | §5.4 / §5.1 / H3 | FATAL (H3) | DOC |
+| R3-F6 | §1.3 / §1.5 | WOUNDING | DOC |
+| R3-F7 | §1.2–1.3 / §5.1 | WOUNDING | DOC |
+| R3-F8 | §5.6 / §2.8 | WOUNDING | DOC |
+| R3-F9 | §5.6 / §1.5 | WOUNDING | DOC |
+| R3-F10 | §5.3–5.6 | WOUNDING | DOC |
+| R3-F11 | App. A / §5.3–5.4 | WOUNDING | DOC |
+| R3-F12 | §5.2 | MINOR | PRIOR |
+| R3-F13 | §2.1 / §2.4 | WOUNDING | DOC |
+| R3-F14 | §2.6 | WOUNDING | DOC |
+| R3-F15 | H1 / E1 | WOUNDING | DOC |
+| R3-F16 | H2 / §5.3 | WOUNDING | DOC |
+| R3-F17 | H3 / H4 | MINOR | DOC |
+| R3-F18 | §11 | MINOR | DOC |
+| R3-F19 | §4 | MINOR | DOC |
+| R3-F20 | §3.3 / §3.5 | MINOR | DOC |
+
+**Totals:** 3 FATAL, 12 WOUNDING, 5 MINOR.
+
+## The single finding to fix first
+
+**R3-F5.** Rule 1, lineage ground J_F, is v0.6's main new mechanism and the stated repair of our R2-F14. In the reference toy it has no causal path at all, and its deposit has no schema. Until δ_F is defined and the toy Φ reads it, H3 can only fail, and for the wrong reason. The J-empty and J-shuffled controls are meaningless, and the R3-F2 and R3-F8 sequencing questions can't even be tested.
+
+The fix is small: a closed δ_F record, one bounded J term in the toy Φ, and one golden vector with a nonempty J_F.
+
+R3-F1 comes next (n = 4 or drop "malicious"), then R3-F2.
+
+## Blue-sky idea (unscored, excluded from findings)
+
+**Inherited ground with a sunset.** Give every J_F deposit a generation half-life. A descendant inherits it at reduced weight unless the descendant crosses the same way itself, which renews it through its own gate.
+
+This would do three things:
+- **Turns H3 into a dose-response test.** Instead of comparing J-present with J-empty, you predict how a deposit's effect should fade with generational distance, which is harder to fake.
+- **Limits error propagation.** An uncorrected error fades without anyone having to rewrite history, which eases R3-F7.
+- **Matches the paper's frame.** A tradition that each generation re-earns differs from a decree passed down. The renewal rate becomes a measurable property of a family: whether its children keep walking the same crossings.
+
+It doesn't touch the pending grace definition, because the gate still decides each renewal.
+
+---
+
+**PRIOR claims** (R3-F1, R3-F12) rest on published distributed-systems and CBOR standards that I recalled from memory. I did not re-read them this round, so they should be checked before citation.
+===== END FALSIFIER B (HISTORY SEAT) REPORT =====

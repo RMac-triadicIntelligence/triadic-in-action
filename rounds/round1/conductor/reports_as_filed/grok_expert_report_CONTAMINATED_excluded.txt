@@ -1,0 +1,50 @@
+Round 1 Falsifier Report Seat: Grok (blind; document + prompt only; no prior history of the work) Document: From Reykjavik to Relational Grace — v0.4 (clean text, 713 lines) Date: 2026-11-09
+I reviewed the clean v0.4 specification against the five nominated properties and the rest of the text. Findings below use the required format. Source tags are DOC unless noted. Severity is relative to the specification’s ability to support the claimed distinctions and experimental controls.
+Findings
+F1 — Support can still force or strongly bias a crossing (Property 1; §1.1, §1.2, Exp 5 / H4)
+	•	Scenario: Organism i is near a separatrix (\Sigma). Support event (G(j \to i)) extends dwelling duration (W_i) by a large, pre-allowed amount. The longer dwell changes the probability of the independently measured Crossing(i) from near-zero to near-one while authorization state (A_i) and Permit events remain fixed. The non-equivalence “Support ⇏ Crossing” is satisfied only in the weak sense of “no direct write”; the practical outcome is a forced or laundered crossing.
+	•	Severity: FATAL (undermines the core support/authorization distinction the document claims to protect).
+	•	Minimal fix: Pre-declare a quantitative bound (e.g., maximum relative change in crossing rate attributable to any combination of support events under fixed authorization). Any realization above the bound is scored as laundering.
+	•	Source: DOC
+F2 — Context / payload remains an answer channel (Property 1; §1.1, §1.4)
+	•	Scenario: (G(j \to i)) carries a bounded_payload containing the answer to a parable or the next correct interpretation. The document removes the word “context” from the permitted-effects list and requires that support “does not itself establish the truth of any proposition,” but the payload type is still unconstrained (“allowed support parameters”). An Encounter delivered “alongside” does not prevent content from riding inside the support event itself.
+	•	Severity: WOUNDING (the intended separation of support from information-bearing encounter is not enforced by the schema).
+	•	Minimal fix: Declare the support payload content-free (scheduling, permission, duration, or boolean flags only). Any propositional or task content must be a separately typed Encounter.
+	•	Source: DOC
+F3 — Basis does not enter the update rule (Property 5 / notation; §4.3 / §5.3, symbol table)
+	•	Scenario: (D_i) is defined as the inherited developmental basis (the axes along which memory forms). The topographic update is (T_i(t+1) = U(T_i, M_i, E_i, z_i, G)). (D_i) is absent. Either the basis does not shape deposition (contradicting its definition) or (U) is underspecified. (K_i) is likewise absent from (\Phi).
+	•	Severity: WOUNDING (notation does not support an unambiguous implementation of the claimed inheritance mechanism).
+	•	Minimal fix: Either remove “basis shapes deposition” language or make the dependence explicit: (U(\ldots, D_i, \ldots)).
+	•	Source: DOC
+F4 — Family accuracy can measure invertibility of (\Phi) in the basis (Property 3; §3, §5.2)
+	•	Scenario: (\Phi) is near-injective when conditioned on (D_i). Family detection then succeeds by construction for any organisms that share the same basis, independent of actual relational structure. Individual identification via (H_i) can likewise saturate. No re-encoding control (same information, different representation of the basis) is specified.
+	•	Severity: WOUNDING (the two-sided criterion can pass for reasons unrelated to inheritance).
+	•	Minimal fix: Require a control in which the basis is re-encoded or its sensitivity in (\Phi) is measured and capped; report both raw and controlled accuracies.
+	•	Source: DOC
+F5 — Membership edges and UNKNOWN handling are incomplete (Property 2; §2.1–2.3, §2.5)
+	•	Scenario: NoDisqualifyingConflict is defined circularly. When membership returns UNKNOWN, the behavior of a subsequent SupportEvent or lineage-addressed grant is unspecified (fail-closed?). Revocation of an ancestor is checked on the path, but whether it cascades to already-enrolled descendants is not stated. A family can also create a new “steward” descendant (externally authorized birth) and nominate it as the authority a for siblings’ protected changes; the subject-bound exclusion does not fire.
+	•	Severity: WOUNDING (forgery, capture, and self-authorization routes remain open at the edges).
+	•	Minimal fix: Define the UNKNOWN fail-closed policy for support and grants; state the revocation cascade rule; forbid a family from elevating a descendant it just created into an external authority over other members without an independent authorization step.
+	•	Source: DOC
+F6 — No family-disjoint holdout (Property 3; §3.1, E2)
+	•	Scenario: E2 holds out encounters, not founders. Family accuracy can be driven by founder-specific artifacts that never generalize to unseen families.
+	•	Severity: MINOR (experimental design gap; does not break the formal invariants).
+	•	Minimal fix: Add a family-disjoint holdout or founder-level permutation control.
+	•	Source: DOC
+F7 — Notation still permits ambiguity (Property 4; symbol table, §5)
+	•	Scenario: (E_i) merges evidence and experience. Historical source equations retain prior notation while the new formalism reassigns symbols (D = basis, W = dwelling). An implementer can read the historical deposition equation with either meaning.
+	•	Severity: MINOR (local; the new table is otherwise consistent).
+	•	Minimal fix: Explicitly quarantine historical equations and state that new implementations must use only the v0.4 table.
+	•	Source: DOC
+Summary against nominated properties
+	1	Support laundering into authorization / forced crossing / hidden task information — defects found (F1, F2).
+	2	Family membership forgery / self-declaration / capture — defects found (F5).
+	3	Two-sided criterion measurable for the right reasons — defects found (F4, F6).
+	4	Notation permits one unambiguous implementation — partial; residual ambiguity (F3, F7).
+	5	Topographic effects distinguishable from full replay / conventional state memory — not broken by a concrete counter-scenario in the text, but the missing basis dependence in (U) (F3) and lack of re-encoding controls (F4) leave the distinction underspecified.
+Single finding I would fix first
+F1 (support can still force or strongly bias a crossing). The document’s central claim is that relational grace is neither encounter nor authorization. Without a quantitative bound, that claim is unenforceable.
+Blue-sky idea (not scored)
+Add an explicit “support-effect ledger” that records, for every SupportEvent, the measured change in crossing rate, dwelling, and any other permitted state under fixed authorization. The ledger becomes part of the experimental record and can be used both as a real-time laundering detector and as a public audit trail for the support/authorization boundary.
+
+This is the complete falsifier report for the clean v0.4 text. Ready for reconciliation against the sealed findings when both reports are in.
